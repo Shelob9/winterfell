@@ -271,9 +271,11 @@ function fancy_pants_front_page() {
 	wp_enqueue_script('jquery');	
 	
 	// Site wide js
-	wp_enqueue_script('custom', get_template_directory_uri() . '/js/custom.js');
-	wp_enqueue_script('masonry', get_template_directory_uri() . '/js/jquery.masonry.min.js');
-	wp_enqueue_script('prettyphoto', get_template_directory_uri() . '/js/jquery.prettyPhoto.js');
+	wp_enqueue_script('custom', get_template_directory_uri() . '/javascripts/custom.js');
+	wp_enqueue_script('masonry', get_template_directory_uri() . '/javascripts/jquery.masonry.min.js');
+	wp_enqueue_script('prettyphoto', get_template_directory_uri() . '/javascripts/jquery.prettyPhoto.js');
 }
 
+
+require('admin/theme-admin.php');
 ?>
