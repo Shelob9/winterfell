@@ -16,5 +16,5 @@ require('functions/shortcodes.php');
 require('functions/flickr-widget.php');
 
 //FROM FOUNDATION
-
+require('functions/functions-f.php');
 ?>
