@@ -40,7 +40,7 @@ function my_theme_scripts_function() {
 	wp_deregister_script('jquery'); 
 		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"), false, '1.6'); 
 	wp_enqueue_script('jquery');	
-	
+
 	// Site wide js
 	wp_enqueue_script('custom', get_template_directory_uri() . '/js/custom.js');
 	wp_enqueue_script('masonry', get_template_directory_uri() . '/js/jquery.masonry.min.js');
