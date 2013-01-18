@@ -32,16 +32,6 @@ $options = get_option( 'Pronto_theme_settings' );
 </head>
 <body <?php body_class(); ?>>
 
-<?php if(!empty($options['notification'])) { ?>
-<div id="notifications">
-    <div id="notifications-inner">
-		<?php echo stripslashes($options['notification']); ?>
-    </div>
-    <!-- /notifications-exit -->  
-</div>
-<!-- /notifications -->
-<?php } ?>
 
-<div id="wrap" class="clearfix">
 
 <?php get_sidebar(' '); ?>
