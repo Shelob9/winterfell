@@ -37,8 +37,7 @@ function my_theme_scripts_function() {
 	//get theme options
 	global $options;
 	
-	wp_deregister_script('jquery'); 
-		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"), false, '1.6'); 
+	
 	wp_enqueue_script('jquery');	
 	
 	// Site wide js
