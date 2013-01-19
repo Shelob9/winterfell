@@ -5,9 +5,6 @@
 */
 
 
-// Set the content width based on the theme's design and stylesheet.
-if ( ! isset( $content_width ) ) 
-    $content_width = 620;
 
 
 
@@ -17,8 +14,7 @@ if ( ! isset( $content_width ) )
 /*-----------------------------------------------------------------------------------*/
 /*	Images
 /*-----------------------------------------------------------------------------------*/
-if ( function_exists( 'add_theme_support' ) )
-	add_theme_support( 'post-thumbnails' );
+
 
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'full-size',  9999, 9999, false );
