@@ -44,7 +44,7 @@ function all_scripts_style() {
 		// style for foundation
 		wp_enqueue_style( 'foundation', get_template_directory_uri().'/stylesheets/foundation.min.css' );
 		wp_enqueue_style( 'app', get_stylesheet_uri(), array('foundation') );
-		//fc-webicons style for social icons
+		//style for social webicons
 		wp_enqueue_style( 'webicons', get_template_directory_uri().'/stylesheets/fc-webicons.css' );
 
 		// Load Google Fonts API
