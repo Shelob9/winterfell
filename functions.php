@@ -38,9 +38,9 @@ function all_scripts_style() {
 		wp_enqueue_script('prettyphoto', get_template_directory_uri() . '/js/jquery.prettyPhoto.js');
 
 		// JS for foundation
-		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/javascripts/foundation.min.js', array(), '1.0', true );
-		wp_enqueue_script( 'app', get_template_directory_uri().'/javascripts/app.js', array('foundation'), '1.0', true );
-
+		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/javascripts/foundation.min.js', array(), '1.0', false );
+		wp_enqueue_script( 'app', get_template_directory_uri().'/javascripts/app.js', array('foundation'), '1.0', false );
+		wp_enqueue_script( 'orbit', get_template_directory_uri().'/javascripts/orbit.js', array('foundation'), '1.0', true );
 		// style for foundation
 		wp_enqueue_style( 'foundation', get_template_directory_uri().'/stylesheets/foundation.min.css' );
 		wp_enqueue_style( 'app', get_stylesheet_uri(), array('foundation') );
