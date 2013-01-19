@@ -1,6 +1,6 @@
 
    jQuery(window).load(function() {
-       jQuery("#featured").orbit({
+       jQuery("#featuredContent").orbit({
      animation: 'fade',                  // fade, horizontal-slide, vertical-slide, horizontal-push
      animationSpeed: 800,                // how fast animtions are
      timer: true, 			 // true or false to have the timer
@@ -15,7 +15,8 @@
      bullets: true,			 // true or false to activate the bullet navigation
      bulletThumbs: true,		 // thumbnails for the bullets
      bulletThumbLocation: '',		 // location from this file where thumbs will be
-     afterSlideChange: function(){} 	 // empty function 
+     afterSlideChange: function(){}, 	 // empty function 
+     fluid: '16x9'
 });
    });
 
