@@ -31,20 +31,7 @@ if ( function_exists( 'add_image_size' ) ) {
 /*	Javascsript
 /*-----------------------------------------------------------------------------------*/
 
-add_action('wp_enqueue_scripts','my_theme_scripts_function');
 
-function my_theme_scripts_function() {
-	//get theme options
-	global $options;
-	
-	
-	wp_enqueue_script('jquery');	
-	
-	// Site wide js
-	wp_enqueue_script('custom', get_template_directory_uri() . '/js/custom.js');
-	wp_enqueue_script('masonry', get_template_directory_uri() . '/js/jquery.masonry.min.js');
-	wp_enqueue_script('prettyphoto', get_template_directory_uri() . '/js/jquery.prettyPhoto.js');
-}
 
 
 
