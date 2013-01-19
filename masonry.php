@@ -3,8 +3,7 @@
 
 	<?php 
     if (have_posts()) :
-        <?php while (have_posts()) : the_post(); ?>  
-			<?php if(has_post_thumbnail() ) { ?>
+        
 			<div class="loop-entry">
 					<div class="loop-entry-thumbnail">
 						<a href="<?php the_permalink(' ') ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('post-thumb'); ?></a>
@@ -20,9 +19,7 @@
 			</div><!-- END entry -->
 
 			<?php } ?>
-			<?php endwhile; ?>
-				endif;
-				?>
+			
 
 </div>  
 <!-- /masonry-wrap -->

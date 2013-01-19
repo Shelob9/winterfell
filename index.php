@@ -17,15 +17,34 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
+				<!-- masonry-wrap -->
+<div id="masonry-wrap">
 
-		<?php else : ?>
+	<?php 
+    if (have_posts()) : ?>
+        
+			<div class="loop-entry">
+					<div class="loop-entry-thumbnail">
+						<a href="<?php the_permalink(' ') ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('post-thumb'); ?></a>
+					</div>
+				<div class="loop-entry-details">
+					<h2><a href="<?php the_permalink(' ') ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+					<?php  echo excerpt('15'); ?>
+					<div class="loop-entry-cat">
+						<?php _e('Posted In', 'pronto'); ?>: <?php the_category(' '); ?>
+					</div>
+				</div>
+				<!-- END loop-entry-details -->  
+			</div><!-- END entry -->
 
-			<h2><?php _e('No posts.', 'foundation' ); ?></h2>
-			<p class="lead"><?php _e('Sorry about this, I couldn\'t seem to find what you were looking for.', 'foundation' ); ?></p>
 			
-		<?php endif; ?>
+			
+
+</div>  
+<!-- /masonry-wrap -->
+			
+
+		
 
 		<?php foundation_pagination(); ?>
 
