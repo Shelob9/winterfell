@@ -14,20 +14,35 @@ get_header(); ?>
     <!-- Main Content -->
     <div class="nine columns" role="content">
 
-		<?php if ( have_posts() ) : ?>
+		<!-- masonry-wrap -->
+<div id="masonry-wrap">
 
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
+	<?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?>  
+			<?php if(has_post_thumbnail() ) { ?>
+			<div class="loop-entry">
+					<div class="loop-entry-thumbnail">
+						<a href="<?php the_permalink(' ') ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('post-thumb'); ?></a>
+					</div>
+				<div class="loop-entry-details">
+					<h2><a href="<?php the_permalink(' ') ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+					<?php  echo excerpt('15'); ?>
+					<div class="loop-entry-cat">
+						<?php _e('Posted In', 'pronto'); ?>: <?php the_category(' '); ?>
+					</div>
+				</div>
+				<!-- END loop-entry-details -->  
+			</div><!-- END entry -->
+
+			<?php } ?>
 			<?php endwhile; ?>
-
-		<?php else : ?>
-
-			<h2><?php _e('No posts.', 'foundation' ); ?></h2>
-			<p class="lead"><?php _e('Sorry about this, I couldn\'t seem to find what you were looking for.', 'foundation' ); ?></p>
 			
-		<?php endif; ?>
+
+</div>  
+<!-- /masonry-wrap -->
 
 		<?php foundation_pagination(); ?>
+		<?php endif ?>
 
     </div>
     <!-- End Main Content -->
