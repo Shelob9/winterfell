@@ -12,8 +12,16 @@
 get_header(); ?>
 <?php $options = get_option( 'Pronto_theme_settings' ); ?>
     <!-- Main Content -->
-    <div class="row" id="home-orbit">
-		<?php get_template_part( 'orbit'); ?>
+    <div class="row" id="home-top">
+    	<div class="two columns" id="home-social">
+			<?php get_template_part( 'social'); ?>
+		</div>
+    
+    	<div class="ten columns offset-by-one" id="home-orbit">
+			<?php get_template_part( 'orbit'); ?>
+		</div>
+		
+
     </div>
     
     
