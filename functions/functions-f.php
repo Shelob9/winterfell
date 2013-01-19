@@ -175,6 +175,39 @@ function foundation_widgets() {
 			'before_title' => '<h5>',
 			'after_title' => '</h5>',
 		) );
+		
+		// Home Widget 1
+	register_sidebar( array(
+			'id' => 'foundation_sidebar_footer_one',
+			'name' => __( 'Home Widget One', 'foundation' ),
+			'description' => __( 'This sidebar is located on the left side of the home page widget area.', 'foundation' ),
+			'before_widget' => '<div class="three columns offset-by-one home-widget">',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
+
+	// Home Widget 2
+	register_sidebar( array(
+			'id' => 'foundation_sidebar_footer_two',
+			'name' => __( 'Hoem Widget Two', 'foundation' ),
+			'description' => __( 'This sidebar is located in the center of the home page widget area.', 'foundation' ),
+			'before_widget' => '<div class="three columns offset-by-one home-widget">',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
+
+	// Home Widget 3
+	register_sidebar( array(
+			'id' => 'foundation_sidebar_footer_three',
+			'name' => __( 'Home Widget Three', 'foundation' ),
+			'description' => __( 'This sidebar is located on the right side of the home page widget area.', 'foundation' ),
+			'before_widget' => '<div class="three columns offset-by-one home-widget">',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
 
 	}
 
