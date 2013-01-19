@@ -1,37 +1,49 @@
 <?php
 /**
+ * Header
+ *
+ * Setup the header for our theme
+ *
  * @package WordPress
- * @subpackage Pronto Theme
+ * @subpackage Foundation, for WordPress
+ * @since Foundation, for WordPress 1.0
  */
-$options = get_option( 'Pronto_theme_settings' );
-?>
+
+$options = get_option( 'Pronto_theme_settings' ); ?>
 <!DOCTYPE html>
 
-<!-- BEGIN html -->
-<html <?php language_attributes(); ?>>
-<!-- Design by AJ Clarke (http://www.wpexplorer.com) - Powered by WordPress (http://wordpress.org) -->
-
-<!-- BEGIN head -->
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
 
-<!-- Meta Tags -->
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' |'; } ?> <?php bloginfo('name'); ?></title>
-    
-<!-- Stylesheet & Favicon -->
-<?php if($options['favicon'] !='') { ?>
-<link rel="icon" type="image/png" href="<?php echo $options['favicon']; ?>" />
-<?php } ?>
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width" />
 
-<!-- WP Head -->
-<?php if ( is_single() || is_page() ) wp_enqueue_script( 'comment-reply' ); ?>
+<title><?php wp_title(); ?></title>
+
 <?php wp_head(); ?>
 
 </head>
+
 <body <?php body_class(); ?>>
 
+	<header class="row">
 
+		<hgroup class="site-title twelve columns">
+			<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h3 class="subheader"><?php bloginfo('description'); ?></h3>
+		</hgroup>
 
-<?php get_sidebar(' '); ?>
+		<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'nav-bar', 'fallback_cb' => 'foundation_page_menu', 'container' => 'nav', 'container_class' => 'twelve columns', 'walker' => new foundation_navigation() ) ); ?>
+
+	</header>
+
+<!-- Begin Page -->
+<div class="row">
