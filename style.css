@@ -70,9 +70,10 @@ h1,h2,h3,h4,h5,h6 {font-weight:300;}
 ----------------------------------------- */
 
 /* -----------------------------------------
-   Page Name 1
+  Orbit
 ----------------------------------------- */
-
+.orbit-wrapper .slider-nav span { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; -webkit-transition: opacity 400ms; -moz-transition: opacity 400ms; -o-transition: opacity 400ms; transition: opacity 400ms; }
+.orbit-wrapper:hover .slider-nav span { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
 /* -----------------------------------------
    Page Name 2
 ----------------------------------------- */
