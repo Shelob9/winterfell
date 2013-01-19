@@ -8,8 +8,7 @@ function foundation_setup() {
 	// Custom Editor Style Support
 	add_editor_style();
 
-	// Support for Featured Images
-	add_theme_support( 'post-thumbnails' ); 
+	
 
 	// Automatic Feed Links & Post Formats
 	add_theme_support( 'automatic-feed-links' );

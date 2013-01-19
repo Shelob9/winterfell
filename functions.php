@@ -56,14 +56,25 @@ add_action( 'wp_enqueue_scripts', 'all_scripts_style' );
 
 
 function my_theme_scripts_function() {
-	
-	
-	
-		
-	
-
 }
 
+/*-----------------------------------------------------------------------------------*/
+/*	Images
+/*-----------------------------------------------------------------------------------*/
+// Support for Featured Images
+	add_theme_support( 'post-thumbnails' ); 
+
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'full-size',  9999, 9999, false );
+	add_image_size( 'post-thumb',  235, 180, true );
+	add_image_size( 'post-full',  600, 9999, false );
+
+function after_setup_theme(){ 
+			// Adds support for featured images and register some default image sizes
+			add_theme_support( 'post-thumbnails' ); 
+			add_image_size( 'orbit-slide', 540, 450, true ); 
+			add_image_size( 'orbit-slide-small', 100, 83, true ); 
+		}
 
 
 
