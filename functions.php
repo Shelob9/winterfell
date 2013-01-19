@@ -68,6 +68,7 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'full-size',  9999, 9999, false );
 	add_image_size( 'post-thumb',  235, 180, true );
 	add_image_size( 'post-full',  600, 9999, false );
+	}
 
 function after_setup_theme(){ 
 			// Adds support for featured images and register some default image sizes

@@ -36,13 +36,7 @@ function new_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'new_excerpt_length');
 
-//Replace Excerpt Link
-function new_excerpt_more($more) {
-       global $post;
-	return '...';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
-}
+
 
 // register navigation menus
 register_nav_menus(
