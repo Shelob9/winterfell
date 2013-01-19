@@ -39,17 +39,6 @@ if ( function_exists( 'add_image_size' ) ) {
 /*	Sidebars
 /*-----------------------------------------------------------------------------------*/
 
-//Register Sidebars
-if ( function_exists('register_sidebar') )
-	register_sidebar(array(
-		'name' => 'Sidebar',
-		'id' => 'sidebar',
-		'description' => 'Widgets in this area will be shown in the sidebar.',
-		'before_widget' => '<div class="sidebar-box clearfix">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4>',
-		'after_title' => '</h4>',
-));
 
 
 /*-----------------------------------------------------------------------------------*/
