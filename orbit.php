@@ -10,19 +10,21 @@
  */
 ?>
 <!-- ORBIT --!>
-<?php if ( have_posts() ) : ?>
-<?php query_posts('category_name=special_cat&posts_per_page=10'); ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+<div class="panel callout radius" id="featuredContent">
+		<?php if ( have_posts() ) : ?>
+		<?php query_posts('category_name=featured'); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-		
-	<?php if ( has_post_thumbnail('orbit-slide')) : ?>
-	<a href="<?php the_permalink(); ?>" class="th" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail(); ?></a>
-	<?php endif; ?>
-
-	<?php the_excerpt(); ?>
-	
-	<?php endwhile ?>
+		<div>
+			<?php if ( has_post_thumbnail()) : ?>
+			<a href="<?php the_permalink(); ?>" class="th" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail('orbit-slide'); ?></a>
+			<?php endif; ?>
+			
+			<?php the_excerpt(); ?>
 		</div>
+		<?php endwhile ?>
+		<?php endif ?>
+</div>
 
 
 

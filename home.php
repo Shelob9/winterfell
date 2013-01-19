@@ -13,7 +13,7 @@ get_header(); ?>
 <?php $options = get_option( 'Pronto_theme_settings' ); ?>
     <!-- Main Content -->
     <div class="row" id="home-orbit">
-    
+		<?php get_template_part( 'orbit'); ?>
     </div>
     
     
