@@ -190,7 +190,7 @@ function foundation_widgets() {
 	// Home Widget 2
 	register_sidebar( array(
 			'id' => 'foundation_sidebar_footer_two',
-			'name' => __( 'Hoem Widget Two', 'foundation' ),
+			'name' => __( 'Home Widget Two', 'foundation' ),
 			'description' => __( 'This sidebar is located in the center of the home page widget area.', 'foundation' ),
 			'before_widget' => '<div class="three columns offset-by-one home-widget">',
 			'after_widget' => '</div>',
