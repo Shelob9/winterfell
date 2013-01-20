@@ -6,10 +6,13 @@ jQuery(function($){
 		  itemSelector: '.loop-entry',
 			  isAnimated: true,
 			  animationOptions: {
-				duration: 750,
+				duration: 200,
 				easing: 'linear',
 				queue: false
 			  }
+			  
+	
+
 		});
 
 		//prettyPhoto

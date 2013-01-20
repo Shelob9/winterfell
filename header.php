@@ -46,4 +46,7 @@ $options = get_option( 'Pronto_theme_settings' ); ?>
 	</header>
 
 <!-- Begin Page -->
+
 <div class="row">
+
+<div id="wrap" class="clearfix">

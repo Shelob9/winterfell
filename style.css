@@ -14,17 +14,6 @@ Text Domain: foundation,
    Winter is coming...
 -----------------------------------------------------
 
-/* -------------------------------------------------- 
-   Table of Contents
------------------------------------------------------
-:: Images
-:: Posts
-:: Typography
-:: Shared Styles
-:: Page Name 1
-:: Page Name 2
-*/
-
 /* -----------------------------------------
    Images
 ----------------------------------------- */
@@ -84,7 +73,18 @@ box-shadow: 0px 4px 14px rgb(25, 25, 25);}
 .orbit-wrapper .slider-nav span { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; -webkit-transition: opacity 400ms; -moz-transition: opacity 400ms; -o-transition: opacity 400ms; transition: opacity 400ms; }
 .orbit-wrapper:hover .slider-nav span { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
 /* -----------------------------------------
-   Page Name 2
+   The Others
 ----------------------------------------- */
-
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+#wrap{
+	margin-top: 80px;
+	margin-left: 225px;
+}
 
