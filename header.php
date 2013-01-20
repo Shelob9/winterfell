@@ -49,4 +49,3 @@ $options = get_option( 'Pronto_theme_settings' ); ?>
 
 <div class="row">
 
-<div id="wrap" class="clearfix">

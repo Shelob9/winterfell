@@ -9,7 +9,7 @@
  * @since Foundation, for WordPress 1.0
  */
 ?>
-
+<li>
 <article>
 
 	<header>
@@ -24,7 +24,7 @@
 	<?php endif; ?>
 
 	<?php the_excerpt(); ?>
-
+	
 </article>
-
+</li>
 <hr>
