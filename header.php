@@ -47,6 +47,7 @@ $options = get_option( 'Pronto_theme_settings' ); ?>
 
 <!-- Begin Page -->
 
-<div class="row">
 
-<div id="wrap" class="clearfix">
+<div class="row">
+<?php get_sidebar() ?>
+<div class="nine columns" class="clearfix">
