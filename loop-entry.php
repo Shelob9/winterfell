@@ -1,7 +1,7 @@
 <?php while (have_posts()) : the_post(); ?>  
 
 
-<div class="loop-entry four columns">
+<div class="loop-entry four columns panel radius">
         <div class="loop-entry-thumbnail">
             <a href="<?php the_permalink(' ') ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('post-thumb'); ?></a>
         </div>
