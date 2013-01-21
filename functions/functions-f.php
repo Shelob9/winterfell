@@ -126,7 +126,7 @@ function foundation_widgets() {
 			'id' => 'foundation_sidebar_right',
 			'name' => __( 'Sidebar Right', 'foundation' ),
 			'description' => __( 'This sidebar is located on the right-hand side of each page.', 'foundation' ),
-			'before_widget' => '<div>',
+			'before_widget' => '<div class="panel radius">',
 			'after_widget' => '</div>',
 			'before_title' => '<h5>',
 			'after_title' => '</h5>',
