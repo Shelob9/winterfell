@@ -1,28 +1,18 @@
 /*
 Theme Name: Winterfell	
-Theme URI: http://ComplexWaveform.com/wintermute
+Theme URI: http://complexwaveform.com
 Author: Josh Pollock
-Author URI: http://ComplexWaveform.com/
-Version: 3.0
+Author URI: http://complexwaveform.com
+Version:0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: foundation
+Text Domain: foundation, 
 */
 
 /* Artfully masterminded by ZURB  */
-
-@import url('css/prettyPhoto.css');
-
 /* -------------------------------------------------- 
-   Table of Contents
+   Winter is coming...
 -----------------------------------------------------
-:: Images
-:: Posts
-:: Typography
-:: Shared Styles
-:: Page Name 1
-:: Page Name 2
-*/
 
 /* -----------------------------------------
    Images
@@ -65,15 +55,37 @@ h1,h2,h3,h4,h5,h6 {font-weight:300;}
 .site-title .subheader {margin-bottom:0;}
 
 /* -----------------------------------------
-   Shared Styles
+   Widget Shapes
 ----------------------------------------- */
 
+.home-widget {
+border: 3px solid rgb(122, 163, 24);
+border-radius: 25px 25px 25px 0px;
+box-shadow: 0px 4px 14px rgb(25, 25, 25);
+
+}
 /* -----------------------------------------
-   Page Name 1
+  Orbit
 ----------------------------------------- */
-
+.orbox{border: 3px solid rgb(122, 163, 24);
+border-radius: 25px 25px 25px 0px;
+box-shadow: 0px 4px 14px rgb(25, 25, 25);}
+.orbit-wrapper .slider-nav span { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; -webkit-transition: opacity 400ms; -moz-transition: opacity 400ms; -o-transition: opacity 400ms; transition: opacity 400ms; }
+.orbit-wrapper:hover .slider-nav span { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
 /* -----------------------------------------
-   Page Name 2
+   The Others
 ----------------------------------------- */
-
-
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+#wrap{
+	margin-top: 80px;
+	margin-bottom: 80px;
+	margin-left: 225px;
+}
+#total-wrap {background: #D8D2B1; margin-top:10px; margin-bottom:10px;padding-left:16px;padding-right:16px;}
