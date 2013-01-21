@@ -40,7 +40,7 @@
 	</div>
 </footer>
 <!-- End Footer -->
-
+</div><!--#Total-Wrap -->
 <?php wp_footer(); ?>
 </body>
 </html>

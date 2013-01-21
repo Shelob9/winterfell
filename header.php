@@ -33,7 +33,7 @@ $options = get_option( 'Pronto_theme_settings' ); ?>
 </head>
 
 <body <?php body_class(); ?>>
-
+<div class="row" id="total-wrap">
 	<header class="row">
 
 		<hgroup class="site-title twelve columns">
