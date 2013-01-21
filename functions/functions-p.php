@@ -38,12 +38,6 @@ add_filter('excerpt_length', 'new_excerpt_length');
 
 
 
-// register navigation menus
-register_nav_menus(
-	array(
-	'menu'=>__('Menu'),
-	)
-);
 
 /// add home link to menu
 function home_page_menu_args( $args ) {
@@ -52,14 +46,4 @@ return $args;
 }
 add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
 
-// menu fallback
-function default_menu() {
-	require_once (TEMPLATEPATH . '/includes/default-menu.php');
-}
-
-
-// functions run on activation --> important flush to clear rewrites
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
-	$wp_rewrite->flush_rules();
-}
 ?>
