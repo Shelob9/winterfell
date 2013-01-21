@@ -178,7 +178,7 @@ function foundation_widgets() {
 		
 		// Home Widget 1
 	register_sidebar( array(
-			'id' => 'foundation_sidebar_footer_one',
+			'id' => 'foundation_home_one',
 			'name' => __( 'Home Widget One', 'foundation' ),
 			'description' => __( 'This sidebar is located on the left side of the home page widget area.', 'foundation' ),
 			'before_widget' => '<div>',
@@ -189,7 +189,7 @@ function foundation_widgets() {
 
 	// Home Widget 2
 	register_sidebar( array(
-			'id' => 'foundation_sidebar_footer_two',
+			'id' => 'foundation_home_two',
 			'name' => __( 'Home Widget Two', 'foundation' ),
 			'description' => __( 'This sidebar is located in the center of the home page widget area.', 'foundation' ),
 			'before_widget' => '<div>',
@@ -200,7 +200,7 @@ function foundation_widgets() {
 
 	// Home Widget 3
 	register_sidebar( array(
-			'id' => 'foundation_sidebar_footer_three',
+			'id' => 'foundation_home_three',
 			'name' => __( 'Home Widget Three', 'foundation' ),
 			'description' => __( 'This sidebar is located on the right side of the home page widget area.', 'foundation' ),
 			'before_widget' => '<div>',
