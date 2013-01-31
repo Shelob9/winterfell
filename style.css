@@ -1,0 +1,79 @@
+/*
+Theme Name: Winterfell	
+Theme URI: http://complexwaveform.com
+Author: Josh Pollock
+Author URI: http://complexwaveform.com
+Version:0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: foundation, 
+*/
+
+/* Artfully masterminded by ZURB  */
+/* -------------------------------------------------- 
+   Winter is coming...
+-----------------------------------------------------
+
+/* -----------------------------------------
+   Images
+----------------------------------------- */
+
+.widget img {
+    max-width: 97.5%; /* Fluid images for posts, comments, and widgets */
+}
+img[class*="align"],
+img[class*="wp-image-"] {
+    height: auto; /* Make sure images with WordPress-added height and width >attributes are scaled correctly */
+}
+img.size-full {
+    max-width: 97.5%;
+    width: auto; /* Prevent stretching of full-size images with height and >>width attributes in IE8 */
+}
+
+.wp-caption { max-width: 100%; }
+
+/* -----------------------------------------
+   Posts
+----------------------------------------- */
+
+.author-box h5 {margin-top:0px;}
+.author-box .author_gravatar {margin-right:10px;}
+.author-box p {font-size:14px; font-size:1.4rem;}
+
+article .th {margin-bottom:10px; margin-bottom:1rem;}
+
+.alignleft {float:left;}
+.alignright {float:right;}
+
+/* -----------------------------------------
+   Typography
+----------------------------------------- */
+
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Open Sans', sans-serif;}
+h1,h2,h3,h4,h5,h6 {font-weight:300;}
+
+.site-title .subheader {margin-bottom:0;}
+
+
+/* -----------------------------------------
+  Masonry
+----------------------------------------- */
+.loop-entry-details{font-size:.8em; color:#D8D2B1;}
+.loop-entry-cat{ margin-top:1px;}
+/* -----------------------------------------
+   The Others
+----------------------------------------- */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+#wrap{
+	margin-top: 80px;
+	margin-bottom: 80px;
+	margin-left: 225px;
+}
+#total-wrap {background: #fefae5; margin-top:10px; margin-bottom:10px;padding-left:16px;padding-right:16px;}
