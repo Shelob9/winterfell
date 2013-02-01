@@ -4,10 +4,10 @@
   <div class="flexslider">
 	<ul class="slides">
 	<?php
-	$options = get_option('winterfell_theme_options');
-  	$options['slide-cat'];
+	$cat = get_option('winterfell_theme_options');
+  	$cat['slide-cat'];
   	$args = array(
-		'category'=> $options
+		'category'=> $cat
 		
 	);
 	query_posts( $args );
@@ -17,7 +17,7 @@
 		<li>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			<?php the_post_thumbnail('thumb'); ?>
-			<p class="flex-caption"><?php the_excerpt(); ?></p>
+			<p class="flex-caption"><?php the_excerpt(); ?>
 			</a>
 		</li>
 	<?php
