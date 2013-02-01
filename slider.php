@@ -1,8 +1,16 @@
+
+
 <div class="flex-container">
   <div class="flexslider">
 	<ul class="slides">
 	<?php
-	query_posts(array('category_name' => 'home-slider', 'posts_per_page' => 5));
+	$options = get_option('winterfell_theme_options');
+  	$options['slide-cat'];
+  	$args = array(
+		'category'=> $options
+		
+	);
+	query_posts( $args );
 	if(have_posts()) :
 	    while(have_posts()) : the_post();
 	?>

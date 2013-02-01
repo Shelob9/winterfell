@@ -67,15 +67,15 @@ function theme_options_do_page() {
 				<?php
 				/**
 				 * A winterfell checkbox option
-				 */
-				?>
+				
 				<tr valign="top"><th scope="row"><?php _e( 'Show Slider?', 'winterfelltheme' ); ?></th>
 					<td>
-						<input id="winterfell_theme_options[option1]" name="winterfell_theme_options[option1]" type="checkbox" value="1" <?php checked( '1', $options['option1'] ); ?> />
-						<label class="description" for="winterfell_theme_options[option1]"><?php _e( 'Click To Enable', 'winterfelltheme' ); ?></label>
+						<input id="winterfell_theme_options[slide-enable]" name="winterfell_theme_options[slide-enable]" type="checkbox" value="1" <?php checked( '1', $options['slide-enable'] ); ?> />
+						<label class="description" for="winterfell_theme_options[slide-enable]"><?php _e( 'Click To Enable', 'winterfelltheme' ); ?></label>
 					</td>
 				</tr>
-
+ */
+				?>
 				<?php
 				/**
 				 * A winterfell text input option
@@ -96,9 +96,9 @@ function theme_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Category To Show', 'winterfelltheme' ); ?></th>
 					<td>
-						<select name="winterfell_theme_options[selectinput]">
+						<select name="winterfell_theme_options[slide-cat]">
 							<?php
-								$selected = $options['selectinput'];
+								$selected = $options['slide-cat'];
 								$p = '';
 								$r = '';
 
@@ -112,7 +112,7 @@ function theme_options_do_page() {
 								echo $p . $r;
 							?>
 						</select>
-						<label class="description" for="winterfell_theme_options[selectinput]"><?php _e( 'Category', 'winterfelltheme' ); ?></label>
+						<label class="description" for="winterfell_theme_options[slide-cat]"><?php _e( 'Category', 'winterfelltheme' ); ?></label>
 					</td>
 				</tr>
 
@@ -175,16 +175,16 @@ function theme_options_validate( $input ) {
 	global $select_options, $radio_options;
 
 	// Our checkbox value is either 0 or 1
-	if ( ! isset( $input['option1'] ) )
-		$input['option1'] = null;
-	$input['option1'] = ( $input['option1'] == 1 ? 1 : 0 );
+	if ( ! isset( $input['slide-enable'] ) )
+		$input['slide-enable'] = null;
+	$input['slide-enable'] = ( $input['slide-enable'] == 1 ? 1 : 0 );
 
 	// Say our text option must be safe text with no HTML tags
 	$input['sometext'] = wp_filter_nohtml_kses( $input['sometext'] );
 
 	// Our select option must actually be in our array of select options
-	if ( ! array_key_exists( $input['selectinput'], $select_options ) )
-		$input['selectinput'] = null;
+	if ( ! array_key_exists( $input['slide-cat'], $select_options ) )
+		$input['slide-cat'] = null;
 
 	// Our radio option must actually be in our array of radio options
 	if ( ! isset( $input['radioinput'] ) )
