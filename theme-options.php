@@ -86,8 +86,7 @@ function theme_options_do_page() {
 						<label class="description" for="winterfell_theme_options[sometext]"><?php _e( 'winterfell text input', 'winterfelltheme' ); ?></label>
 					</td>
 				</tr>
-*/
-				?>
+
 
 				<?php
 				/**
