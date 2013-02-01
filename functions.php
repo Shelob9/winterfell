@@ -90,7 +90,6 @@ function after_setup_theme(){
 			add_image_size( 'orbit-slide', 540, 450, true ); 
 			add_image_size( 'orbit-slide-small', 100, 83, true ); 
 		}
-		
 /*-----------------------------------------------------------------------------------*/
 /*	The Others
 /*-----------------------------------------------------------------------------------*/
@@ -122,17 +121,5 @@ return $output;
 function jp_social_spin() {
 
 }
-
-/**
-* Bootstrap the Theme Options Framework
-*/
-if( file_exists(get_template_directory().'/options/options.php') )
-  include_once(get_template_directory().'/options/options.php');
-  
-/**
-* Set up General Options
-*/
-if( file_exists(get_template_directory().'/theme-options.php') )
-  include_once(get_template_directory().'/theme-options.php')
 
 ?>
