@@ -17,7 +17,7 @@
 		<li>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			<?php the_post_thumbnail('thumb'); ?>
-			<p class="flex-caption"><?php the_excerpt(); ?>
+			<?php the_excerpt(); ?>
 			</a>
 		</li>
 	<?php
