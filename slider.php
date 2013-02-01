@@ -6,10 +6,12 @@
 	<?php
 	$cat = get_option('winterfell_theme_options');
   	$cat['slide-cat'];
+  	$num = get_option('winterfell_theme_options');
+  	$num['sometext'];
   	$args = array(
-		'category'=> $cat
-		
-	);
+		'category' => $cat,
+		'post_per_page' => $num
+		);
 	query_posts( $args );
 	if(have_posts()) :
 	    while(have_posts()) : the_post();

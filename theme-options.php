@@ -1,5 +1,5 @@
 <?php
-
+//http://themeshaper.com/2010/06/03/sample-theme-options/
 add_action( 'admin_init', 'theme_options_init' );
 add_action( 'admin_menu', 'theme_options_add_page' );
 
@@ -18,29 +18,14 @@ function theme_options_add_page() {
 }
 
 /**
- * Create arrays for our select and radio options
+ * Create arrays for category selector
  */
 $cats = get_categories();
 foreach($cats as $cat){
 $select_options[$cat->term_id]["value"] = $cat->term_id;
 $select_options[$cat->term_id]["label"] = $cat->name;
 }
-/*
-$radio_options = array(
-	'yes' => array(
-		'value' => 'yes',
-		'label' => __( 'Yes', 'winterfelltheme' )
-	),
-	'no' => array(
-		'value' => 'no',
-		'label' => __( 'No', 'winterfelltheme' )
-	),
-	'maybe' => array(
-		'value' => 'maybe',
-		'label' => __( 'Maybe', 'winterfelltheme' )
-	)
-);
-*/
+
 /**
  * Create the options page
  */
@@ -63,24 +48,13 @@ function theme_options_do_page() {
 			<?php $options = get_option( 'winterfell_theme_options' ); ?>
 
 			<table class="form-table">
-
 				<?php
 				/**
-				 * A winterfell checkbox option
-				
-				<tr valign="top"><th scope="row"><?php _e( 'Show Slider?', 'winterfelltheme' ); ?></th>
-					<td>
-						<input id="winterfell_theme_options[slide-enable]" name="winterfell_theme_options[slide-enable]" type="checkbox" value="1" <?php checked( '1', $options['slide-enable'] ); ?> />
-						<label class="description" for="winterfell_theme_options[slide-enable]"><?php _e( 'Click To Enable', 'winterfelltheme' ); ?></label>
-					</td>
-				</tr>
- */
+				 * Choose # of posts
+				 */
 				?>
-				<?php
-				/**
-				 * A winterfell text input option
-				
-				<tr valign="top"><th scope="row"><?php _e( 'Some text', 'winterfelltheme' ); ?></th>
+			
+				<tr valign="top"><th scope="row"><?php _e( 'Number of Posts To Show', 'winterfelltheme' ); ?></th>
 					<td>
 						<input id="winterfell_theme_options[sometext]" class="regular-text" type="text" name="winterfell_theme_options[sometext]" value="<?php esc_attr_e( $options['sometext'] ); ?>" />
 						<label class="description" for="winterfell_theme_options[sometext]"><?php _e( 'winterfell text input', 'winterfelltheme' ); ?></label>
@@ -90,7 +64,7 @@ function theme_options_do_page() {
 
 				<?php
 				/**
-				 * A winterfell select input option
+				 * Select category for slider
 				 */
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Category To Show', 'winterfelltheme' ); ?></th>
@@ -115,48 +89,7 @@ function theme_options_do_page() {
 					</td>
 				</tr>
 
-				<?php
-				/**
-				 * A winterfell of radio buttons
-				
-				<tr valign="top"><th scope="row"><?php _e( 'Radio buttons', 'winterfelltheme' ); ?></th>
-					<td>
-						<fieldset><legend class="screen-reader-text"><span><?php _e( 'Radio buttons', 'winterfelltheme' ); ?></span></legend>
-						<?php
-							if ( ! isset( $checked ) )
-								$checked = '';
-							foreach ( $radio_options as $option ) {
-								$radio_setting = $options['radioinput'];
-
-								if ( '' != $radio_setting ) {
-									if ( $options['radioinput'] == $option['value'] ) {
-										$checked = "checked=\"checked\"";
-									} else {
-										$checked = '';
-									}
-								}
-								?>
-								<label class="description"><input type="radio" name="winterfell_theme_options[radioinput]" value="<?php esc_attr_e( $option['value'] ); ?>" <?php echo $checked; ?> /> <?php echo $option['label']; ?></label><br />
-								<?php
-							}
-						?>
-						</fieldset>
-					</td>
-				</tr>
- */
-				?>
-				<?php
-				/**
-				 * A winterfell textarea option
-				
-				<tr valign="top"><th scope="row"><?php _e( 'A textbox', 'winterfelltheme' ); ?></th>
-					<td>
-						<textarea id="winterfell_theme_options[sometextarea]" class="large-text" cols="50" rows="10" name="winterfell_theme_options[sometextarea]"><?php echo esc_textarea( $options['sometextarea'] ); ?></textarea>
-						<label class="description" for="winterfell_theme_options[sometextarea]"><?php _e( 'winterfell text box', 'winterfelltheme' ); ?></label>
-					</td>
-				</tr>
-*/
-				?>
+=
 			</table>
 
 			<p class="submit">
@@ -173,10 +106,6 @@ function theme_options_do_page() {
 function theme_options_validate( $input ) {
 	global $select_options, $radio_options;
 
-	// Our checkbox value is either 0 or 1
-	if ( ! isset( $input['slide-enable'] ) )
-		$input['slide-enable'] = null;
-	$input['slide-enable'] = ( $input['slide-enable'] == 1 ? 1 : 0 );
 
 	// Say our text option must be safe text with no HTML tags
 	$input['sometext'] = wp_filter_nohtml_kses( $input['sometext'] );
@@ -185,14 +114,7 @@ function theme_options_validate( $input ) {
 	if ( ! array_key_exists( $input['slide-cat'], $select_options ) )
 		$input['slide-cat'] = null;
 
-	// Our radio option must actually be in our array of radio options
-	if ( ! isset( $input['radioinput'] ) )
-		$input['radioinput'] = null;
-	if ( ! array_key_exists( $input['radioinput'], $radio_options ) )
-		$input['radioinput'] = null;
 
-	// Say our textarea option must be safe text with the allowed tags for posts
-	$input['sometextarea'] = wp_filter_post_kses( $input['sometextarea'] );
 
 	return $input;
 }
