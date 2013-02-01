@@ -14,39 +14,18 @@ function theme_options_init(){
  * Load up the menu page
  */
 function theme_options_add_page() {
-	add_theme_page( __( 'Theme Options', 'winterfelltheme' ), __( 'Theme Options', 'winterfelltheme' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
+	add_theme_page( __( 'Theme Options', 'winterfelltheme' ), __( 'Homepage Slider', 'winterfelltheme' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
 }
 
 /**
  * Create arrays for our select and radio options
  */
-$select_options = array(
-	'0' => array(
-		'value' =>	'0',
-		'label' => __( 'Zero', 'winterfelltheme' )
-	),
-	'1' => array(
-		'value' =>	'1',
-		'label' => __( 'One', 'winterfelltheme' )
-	),
-	'2' => array(
-		'value' => '2',
-		'label' => __( 'Two', 'winterfelltheme' )
-	),
-	'3' => array(
-		'value' => '3',
-		'label' => __( 'Three', 'winterfelltheme' )
-	),
-	'4' => array(
-		'value' => '4',
-		'label' => __( 'Four', 'winterfelltheme' )
-	),
-	'5' => array(
-		'value' => '3',
-		'label' => __( 'Five', 'winterfelltheme' )
-	)
-);
-
+$cats = get_categories();
+foreach($cats as $cat){
+$select_options[$cat->term_id]["value"] = $cat->term_id;
+$select_options[$cat->term_id]["label"] = $cat->name;
+}
+/*
 $radio_options = array(
 	'yes' => array(
 		'value' => 'yes',
@@ -61,7 +40,7 @@ $radio_options = array(
 		'label' => __( 'Maybe', 'winterfelltheme' )
 	)
 );
-
+*/
 /**
  * Create the options page
  */
@@ -73,7 +52,7 @@ function theme_options_do_page() {
 
 	?>
 	<div class="wrap">
-		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'winterfelltheme' ) . "</h2>"; ?>
+		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Home Page Slider', 'winterfelltheme' ) . "</h2>"; ?>
 
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'winterfelltheme' ); ?></strong></p></div>
@@ -90,10 +69,10 @@ function theme_options_do_page() {
 				 * A winterfell checkbox option
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'A checkbox', 'winterfelltheme' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Show Slider?', 'winterfelltheme' ); ?></th>
 					<td>
 						<input id="winterfell_theme_options[option1]" name="winterfell_theme_options[option1]" type="checkbox" value="1" <?php checked( '1', $options['option1'] ); ?> />
-						<label class="description" for="winterfell_theme_options[option1]"><?php _e( 'winterfell checkbox', 'winterfelltheme' ); ?></label>
+						<label class="description" for="winterfell_theme_options[option1]"><?php _e( 'Click To Enable', 'winterfelltheme' ); ?></label>
 					</td>
 				</tr>
 
@@ -115,7 +94,7 @@ function theme_options_do_page() {
 				 * A winterfell select input option
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Select input', 'winterfelltheme' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Category To Show', 'winterfelltheme' ); ?></th>
 					<td>
 						<select name="winterfell_theme_options[selectinput]">
 							<?php
@@ -133,7 +112,7 @@ function theme_options_do_page() {
 								echo $p . $r;
 							?>
 						</select>
-						<label class="description" for="winterfell_theme_options[selectinput]"><?php _e( 'winterfell select input', 'winterfelltheme' ); ?></label>
+						<label class="description" for="winterfell_theme_options[selectinput]"><?php _e( 'Category', 'winterfelltheme' ); ?></label>
 					</td>
 				</tr>
 
