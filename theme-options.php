@@ -1,25 +1,25 @@
 <?php
 
-$colors_images_tab = array(
-	"name" => "colors_and_images",
-	"title" => __("Colors and Images","upfw"),
+$home_slider = array(
+	"name" => "home_slider",
+	"title" => __("Home Page Slider","upfw"),
 	'sections' => array(
 		'color_scheme' => array(
-			'name' => 'color_scheme',
-			'title' => __( 'Color Scheme', 'upfw' ),
-			'description' => __( 'Select your color scheme.','upfw' )
+			'name' => 'home_slider',
+			'title' => __( 'Home Page Slider', 'upfw' ),
+			'description' => __( 'Options.','upfw' )
 		)
 	)
 );
 
-register_theme_option_tab($colors_images_tab);
+register_theme_option_tab($home_slider);
 
  //*
 // * The following example shows you how to register theme options and assign them to tabs:
 
 $options = array(
   'theme_color_scheme' => array(
-  	"tab" => "colors_and_images",
+  	"tab" => "home_slider",
   	"name" => "theme_color_scheme",
   	"title" => "Theme Color Scheme",
   	"description" => __( "Select a color scheme for your website", "example" ),
@@ -40,21 +40,10 @@ $options = array(
       )
   ),
   "theme_footertext" => array(
-  	"tab" => "colors_and_images",
+  	"tab" => "home_slider",
   	"name" => "theme_footertext",
   	"title" => "Theme Footer Text",
   	"description" => __( "Enter text to be displayed in your footer", "example" ),
-  	"section" => "color_scheme",
-  	"since" => "1.0",
-      "id" => "color_scheme",
-      "type" => "text",
-      "default" => "Copyright 2012 UpThemes"
-  ),
-  "font_color" => array(
-  	"tab" => "colors_and_images",
-  	"name" => "font_color",
-  	"title" => "Font Color",
-  	"description" => __( "Select a font color for your theme", "example" ),
   	"section" => "color_scheme",
   	"since" => "1.0",
       "id" => "color_scheme",
