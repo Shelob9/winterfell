@@ -1,78 +1,222 @@
 <?php
+
+add_action( 'admin_init', 'theme_options_init' );
+add_action( 'admin_menu', 'theme_options_add_page' );
+
 /**
- * Theme Colors and Images Settings Functions file
- * 
- * Below is an example of creating a new tab for your Theme Options page:
-**/
-$colors_images_tab = array(
-	"name" => "colors_and_images",
-	"title" => __("Colors and Images","upfw"),
-	'sections' => array(
-		'color_scheme' => array(
-			'name' => 'color_scheme',
-			'title' => __( 'Color Scheme', 'upfw' ),
-			'description' => __( 'Select your color scheme.','upfw' )
-		)
+ * Init plugin options to white list our options
+ */
+function theme_options_init(){
+	register_setting( 'winterfell_options', 'winterfell_theme_options', 'theme_options_validate' );
+}
+
+/**
+ * Load up the menu page
+ */
+function theme_options_add_page() {
+	add_theme_page( __( 'Theme Options', 'winterfelltheme' ), __( 'Theme Options', 'winterfelltheme' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
+}
+
+/**
+ * Create arrays for our select and radio options
+ */
+$select_options = array(
+	'0' => array(
+		'value' =>	'0',
+		'label' => __( 'Zero', 'winterfelltheme' )
+	),
+	'1' => array(
+		'value' =>	'1',
+		'label' => __( 'One', 'winterfelltheme' )
+	),
+	'2' => array(
+		'value' => '2',
+		'label' => __( 'Two', 'winterfelltheme' )
+	),
+	'3' => array(
+		'value' => '3',
+		'label' => __( 'Three', 'winterfelltheme' )
+	),
+	'4' => array(
+		'value' => '4',
+		'label' => __( 'Four', 'winterfelltheme' )
+	),
+	'5' => array(
+		'value' => '3',
+		'label' => __( 'Five', 'winterfelltheme' )
 	)
 );
 
-register_theme_option_tab($colors_images_tab);
-
- /*
- * The following example shows you how to register theme options and assign them to tabs:
- */
-
-$options = array(
-  'theme_color_scheme' => array(
-  	"tab" => "colors_and_images",
-  	"name" => "theme_color_scheme",
-  	"title" => "Theme Color Scheme",
-  	"description" => __( "Select a color scheme for your website", "example" ),
-  	"section" => "color_scheme",
-  	"since" => "1.0",
-      "id" => "color_scheme",
-      "type" => "select",
-      "default" => "light",
-      "valid_options" => array(
-      	"light" => array(
-      		"name" => "light",
-      		"title" => __( "Light", "example" )
-      	),
-      	"dark" => array(
-      		"name" => "dark",
-      		"title" => __( "Dark", "example" )
-      	)
-      )
-  ),
-  "theme_footertext" => array(
-  	"tab" => "colors_and_images",
-  	"name" => "theme_footertext",
-  	"title" => "Theme Footer Text",
-  	"description" => __( "Enter text to be displayed in your footer", "example" ),
-  	"section" => "color_scheme",
-  	"since" => "1.0",
-      "id" => "color_scheme",
-      "type" => "text",
-      "default" => "Copyright 2012 UpThemes"
-  ),
-  "font_color" => array(
-  	"tab" => "colors_and_images",
-  	"name" => "font_color",
-  	"title" => "Font Color",
-  	"description" => __( "Select a font color for your theme", "example" ),
-  	"section" => "color_scheme",
-  	"since" => "1.0",
-      "id" => "color_scheme",
-      "type" => "text",
-      "default" => "Copyright 2012 UpThemes"
-  )
+$radio_options = array(
+	'yes' => array(
+		'value' => 'yes',
+		'label' => __( 'Yes', 'winterfelltheme' )
+	),
+	'no' => array(
+		'value' => 'no',
+		'label' => __( 'No', 'winterfelltheme' )
+	),
+	'maybe' => array(
+		'value' => 'maybe',
+		'label' => __( 'Maybe', 'winterfelltheme' )
+	)
 );
 
-register_theme_options($options);
-
-
- /* The different types of options you can define are: text, color, image, select, list, multiple, textarea, page, pages, category, categories
- * 
+/**
+ * Create the options page
  */
+function theme_options_do_page() {
+	global $select_options, $radio_options;
 
-?>
+	if ( ! isset( $_REQUEST['settings-updated'] ) )
+		$_REQUEST['settings-updated'] = false;
+
+	?>
+	<div class="wrap">
+		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'winterfelltheme' ) . "</h2>"; ?>
+
+		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
+		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'winterfelltheme' ); ?></strong></p></div>
+		<?php endif; ?>
+
+		<form method="post" action="options.php">
+			<?php settings_fields( 'winterfell_options' ); ?>
+			<?php $options = get_option( 'winterfell_theme_options' ); ?>
+
+			<table class="form-table">
+
+				<?php
+				/**
+				 * A winterfell checkbox option
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'A checkbox', 'winterfelltheme' ); ?></th>
+					<td>
+						<input id="winterfell_theme_options[option1]" name="winterfell_theme_options[option1]" type="checkbox" value="1" <?php checked( '1', $options['option1'] ); ?> />
+						<label class="description" for="winterfell_theme_options[option1]"><?php _e( 'winterfell checkbox', 'winterfelltheme' ); ?></label>
+					</td>
+				</tr>
+
+				<?php
+				/**
+				 * A winterfell text input option
+				
+				<tr valign="top"><th scope="row"><?php _e( 'Some text', 'winterfelltheme' ); ?></th>
+					<td>
+						<input id="winterfell_theme_options[sometext]" class="regular-text" type="text" name="winterfell_theme_options[sometext]" value="<?php esc_attr_e( $options['sometext'] ); ?>" />
+						<label class="description" for="winterfell_theme_options[sometext]"><?php _e( 'winterfell text input', 'winterfelltheme' ); ?></label>
+					</td>
+				</tr>
+*/
+				?>
+
+				<?php
+				/**
+				 * A winterfell select input option
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Select input', 'winterfelltheme' ); ?></th>
+					<td>
+						<select name="winterfell_theme_options[selectinput]">
+							<?php
+								$selected = $options['selectinput'];
+								$p = '';
+								$r = '';
+
+								foreach ( $select_options as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option['value'] ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+								}
+								echo $p . $r;
+							?>
+						</select>
+						<label class="description" for="winterfell_theme_options[selectinput]"><?php _e( 'winterfell select input', 'winterfelltheme' ); ?></label>
+					</td>
+				</tr>
+
+				<?php
+				/**
+				 * A winterfell of radio buttons
+				
+				<tr valign="top"><th scope="row"><?php _e( 'Radio buttons', 'winterfelltheme' ); ?></th>
+					<td>
+						<fieldset><legend class="screen-reader-text"><span><?php _e( 'Radio buttons', 'winterfelltheme' ); ?></span></legend>
+						<?php
+							if ( ! isset( $checked ) )
+								$checked = '';
+							foreach ( $radio_options as $option ) {
+								$radio_setting = $options['radioinput'];
+
+								if ( '' != $radio_setting ) {
+									if ( $options['radioinput'] == $option['value'] ) {
+										$checked = "checked=\"checked\"";
+									} else {
+										$checked = '';
+									}
+								}
+								?>
+								<label class="description"><input type="radio" name="winterfell_theme_options[radioinput]" value="<?php esc_attr_e( $option['value'] ); ?>" <?php echo $checked; ?> /> <?php echo $option['label']; ?></label><br />
+								<?php
+							}
+						?>
+						</fieldset>
+					</td>
+				</tr>
+ */
+				?>
+				<?php
+				/**
+				 * A winterfell textarea option
+				
+				<tr valign="top"><th scope="row"><?php _e( 'A textbox', 'winterfelltheme' ); ?></th>
+					<td>
+						<textarea id="winterfell_theme_options[sometextarea]" class="large-text" cols="50" rows="10" name="winterfell_theme_options[sometextarea]"><?php echo esc_textarea( $options['sometextarea'] ); ?></textarea>
+						<label class="description" for="winterfell_theme_options[sometextarea]"><?php _e( 'winterfell text box', 'winterfelltheme' ); ?></label>
+					</td>
+				</tr>
+*/
+				?>
+			</table>
+
+			<p class="submit">
+				<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'winterfelltheme' ); ?>" />
+			</p>
+		</form>
+	</div>
+	<?php
+}
+
+/**
+ * Sanitize and validate input. Accepts an array, return a sanitized array.
+ */
+function theme_options_validate( $input ) {
+	global $select_options, $radio_options;
+
+	// Our checkbox value is either 0 or 1
+	if ( ! isset( $input['option1'] ) )
+		$input['option1'] = null;
+	$input['option1'] = ( $input['option1'] == 1 ? 1 : 0 );
+
+	// Say our text option must be safe text with no HTML tags
+	$input['sometext'] = wp_filter_nohtml_kses( $input['sometext'] );
+
+	// Our select option must actually be in our array of select options
+	if ( ! array_key_exists( $input['selectinput'], $select_options ) )
+		$input['selectinput'] = null;
+
+	// Our radio option must actually be in our array of radio options
+	if ( ! isset( $input['radioinput'] ) )
+		$input['radioinput'] = null;
+	if ( ! array_key_exists( $input['radioinput'], $radio_options ) )
+		$input['radioinput'] = null;
+
+	// Say our textarea option must be safe text with the allowed tags for posts
+	$input['sometextarea'] = wp_filter_post_kses( $input['sometextarea'] );
+
+	return $input;
+}
+
+// adapted from http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/

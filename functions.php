@@ -122,14 +122,8 @@ return $output;
 /*-----------------------------------------------------------------------------------*/
 /*	OPTIONS PAGE
 /*-----------------------------------------------------------------------------------*/
-/**
-  * Bootstrap the Theme Options Framework
-  */
-  if( file_exists(get_template_directory().'/options/options.php') )
-    include_once(get_template_directory().'/options/options.php');
-    /**
-  * Set up General Options
-  */
+
   if( file_exists(get_template_directory().'/theme-options.php') )
-    include_once(get_template_directory().'/theme-options.php')
+    include_once(get_template_directory().'/theme-options.php');
+ 
 ?>
