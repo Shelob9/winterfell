@@ -27,7 +27,7 @@ $options = get_option( 'Pronto_theme_settings' ); ?>
 <meta name="viewport" content="width=device-width" />
 
 <title><?php wp_title(); ?></title>
-
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 <?php wp_head(); ?>
 
 </head>
