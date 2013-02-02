@@ -1,4 +1,4 @@
-<?php get_header(' '); ?>
+<?php get_header(); ?>
    <div class="nine columns panel callout radius">
      
      <h2 class="center">The Page You Requested Can Not Be Found</h2>
