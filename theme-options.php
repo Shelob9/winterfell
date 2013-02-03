@@ -52,16 +52,16 @@ function theme_options_do_page() {
 				/**
 				 * Choose # of posts
 				
-			
 				<tr valign="top"><th scope="row"><?php _e( 'Number of Posts To Show', 'winterfelltheme' ); ?></th>
 					<td>
-						<input id="winterfell_theme_options[sometext]" class="regular-text" type="text" name="winterfell_theme_options[sometext]" value="<?php esc_attr_e( $options['sometext'] ); ?>" />
-						<label class="description" for="winterfell_theme_options[sometext]"><?php _e( 'winterfell text input', 'winterfelltheme' ); ?></label>
+						<input id="winterfell_theme_options[num-posts]" class="regular-text" type="text" name="winterfell_theme_options[num-posts]" value="<?php esc_attr_e( $options['num-posts'] ); ?>" />
+						<label class="description" for="winterfell_theme_options[num-posts]"><?php _e( 'winterfell text input', 'winterfelltheme' ); ?></label>
 					</td>
 				</tr>
-
- */
+*/
 				?>
+			
+ 
 				<?php
 				/**
 				 * Select category for slider
@@ -108,7 +108,7 @@ function theme_options_validate( $input ) {
 
 
 	// Say our text option must be safe text with no HTML tags
-	//$input['sometext'] = wp_filter_nohtml_kses( $input['sometext'] );
+	$input['num-posts'] = wp_filter_nohtml_kses( $input['num-posts'] );
 
 	// Our select option must actually be in our array of select options
 	if ( ! array_key_exists( $input['slide-cat'], $select_options ) )

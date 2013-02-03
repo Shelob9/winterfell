@@ -6,7 +6,7 @@
 	<ul class="slides">
 	<?php
 	$cat = get_option('winterfell_theme_options');
-  	$args = 'cat=' . $cat['slide-cat'] . '&orderby=date&order=ASC';
+  	$args = 'cat=' . $cat['slide-cat'] . '&posts_per_page=' . '&orderby=date&order=ASC';
 	
 	query_posts( $args );
 	if(have_posts()) :
