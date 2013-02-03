@@ -1,17 +1,13 @@
 
 
 <div class="flex-container">
+  
   <div class="flexslider">
 	<ul class="slides">
 	<?php
 	$cat = get_option('winterfell_theme_options');
-  	$cat['slide-cat'];
-  	$num = get_option('winterfell_theme_options');
-  	$num['sometext'];
-  	$args = array(
-		'category' => $cat,
-		'post_per_page' => $num
-		);
+  	$args = 'cat=' . $cat['slide-cat'] . '&orderby=date&order=ASC';
+	
 	query_posts( $args );
 	if(have_posts()) :
 	    while(have_posts()) : the_post();

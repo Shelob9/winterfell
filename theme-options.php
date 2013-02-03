@@ -51,8 +51,7 @@ function theme_options_do_page() {
 				<?php
 				/**
 				 * Choose # of posts
-				 */
-				?>
+				
 			
 				<tr valign="top"><th scope="row"><?php _e( 'Number of Posts To Show', 'winterfelltheme' ); ?></th>
 					<td>
@@ -61,7 +60,8 @@ function theme_options_do_page() {
 					</td>
 				</tr>
 
-
+ */
+				?>
 				<?php
 				/**
 				 * Select category for slider
@@ -108,7 +108,7 @@ function theme_options_validate( $input ) {
 
 
 	// Say our text option must be safe text with no HTML tags
-	$input['sometext'] = wp_filter_nohtml_kses( $input['sometext'] );
+	//$input['sometext'] = wp_filter_nohtml_kses( $input['sometext'] );
 
 	// Our select option must actually be in our array of select options
 	if ( ! array_key_exists( $input['slide-cat'], $select_options ) )
