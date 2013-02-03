@@ -3,21 +3,21 @@
  * @package WordPress
  * @subpackage Pronto Theme
  */
-$options = get_option( 'Pronto_theme_settings' );
+
 ?>
 <?php get_header(' '); ?>
-<?php if (  is_home() ) {?>
+
+<?php
+//Do slider only if is home page.
+if (  is_home() ) {?>
 	<div class="row">
-		
-				<?php get_template_part( 'slider'); ?>
-		
+		<?php get_template_part( 'slider'); ?>
+
 	</div>
 	<div class="row">
 <?php } ?>
-<div id="masonry-wrap">
 
-	
-		
+<div id="masonry-wrap">	
 		<?php 
 		if (have_posts()) :
 			get_template_part( 'loop' , 'entry');
@@ -34,11 +34,11 @@ $options = get_option( 'Pronto_theme_settings' );
 	</div>
 <!-- /pagination -->
 
- <?php if (  is_home() ) {?>
+<?php if (  is_home() ) {?>
 
 </div>
 <?php } ?>
 
- </div>
- <?php get_sidebar() ?>
+</div>
+<?php get_sidebar() ?>
 <?php get_footer(' '); ?>

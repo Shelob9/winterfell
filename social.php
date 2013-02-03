@@ -1,5 +1,3 @@
-
-
 <div class="twelve columns centered" id="social">
 	<div class="row" id="sidebar-social">
 		<div class="twelve columns centered">

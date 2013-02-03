@@ -1,7 +1,4 @@
-
-
 <div class="flex-container">
-  
   <div class="flexslider">
 	<ul class="slides">
 	<?php

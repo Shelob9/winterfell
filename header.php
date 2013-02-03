@@ -9,7 +9,7 @@
  * @since Foundation, for WordPress 1.0
  */
 
-$options = get_option( 'Pronto_theme_settings' ); ?>
+ ?>
 <!DOCTYPE html>
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -18,43 +18,46 @@ $options = get_option( 'Pronto_theme_settings' ); ?>
 <!--[if IE 8]>    <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-<!-- Set the viewport width to device width for mobile -->
-<meta name="viewport" content="width=device-width" />
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
 
-<title><?php wp_title(); ?></title>
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-<?php wp_head(); ?>
+	<title><?php wp_title(); ?></title>
+	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+	<?php wp_head(); ?>
 
 </head>
 
 <body <?php body_class(); ?>>
-<div class="row" id="total-wrap">
-	<header class="row">
+	<div class="row" id="total-wrap">
+		<header class="row">
 
-		<hgroup class="site-title eight columns">
-			<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h3 class="subheader"><?php bloginfo('description'); ?></h3>
-		</hgroup>
+			<hgroup class="site-title eight columns">
+				<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h3 class="subheader"><?php bloginfo('description'); ?></h3>
+			</hgroup>
 
 			
 		
-	</header>
-<div class="row">
-<?php get_template_part( 'nav' ); ?>	
-</div>
+		</header>
+	<div class="row">
+		<?php get_template_part( 'nav' ); ?>	
+	</div>
 <!-- Begin Page -->
 
 
 <div class="row">
-<?php get_sidebar() ?>
-<?php if (  !is_home() ) {?>
-<div class="nine columns" class="clearfix">
-<?php } ?>
-<?php if (  is_home() ) {?>
-<div class="nine columns">
-<?php } ?>
+	<?php get_sidebar() ?>
+
+	<?php
+//Clearfix needed for Masonry to display right, but can not precede slider.
+	if (  !is_home() ) {?>
+	<div class="nine columns" class="clearfix">
+	<?php } ?>
+	<?php if (  is_home() ) {?>
+	<div class="nine columns">
+	<?php } ?>
