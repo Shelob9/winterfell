@@ -1,12 +1,25 @@
 <?php
 
 /*-----------------------------------------------------------------------------------*/
-/*	Include functions
+/*	Include Additional Functions Files
 /*-----------------------------------------------------------------------------------*/
-require('functions/pagination.php');
-require('functions/better-excerpts.php');
-require('functions/comments-function.php');
-require( get_template_directory() . '/inc/shortcodes.php' );
+//theme options
+	if( file_exists(get_template_directory().'/inc/theme-options.php') )
+    include_once(get_template_directory().'/inc/theme-options.php');
+    
+//pagination
+	if( file_exists(get_template_directory().'/inc/pagination.php') )
+		include_once(get_template_directory().'/inc/pagination.php');
+		
+//Functions for commenting		
+	if( file_exists(get_template_directory().'/inc/comments-function.php') )
+		include_once(get_template_directory().'/inc/comments-function.php');
+		
+//shortcodes
+	if( file_exists(get_template_directory() . '/inc/shortcodes.php' ) )
+		include_once(get_template_directory() . '/inc/shortcodes.php' );
+
+
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -215,12 +228,38 @@ add_filter('excerpt_more', 'new_excerpt_more');
 	}
 	add_filter('excerpt_length', 'new_excerpt_length');
 
-/// add home link to menu
+// add home link to menu
 	function home_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 	}
 	add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
+// Better Excerpts
+	function excerpt($limit) {
+		$excerpt = explode(' ', get_the_excerpt(), $limit);
+		if (count($excerpt)>=$limit) {
+		array_pop($excerpt);
+		$excerpt = implode(" ",$excerpt).'...';
+		} else {
+		$excerpt = implode(" ",$excerpt);
+		}
+		$excerpt = preg_replace('`[[^]]*]`','',$excerpt);
+		return $excerpt;
+		}
+	 
+		function content($limit) {
+		$content = explode(' ', get_the_content(), $limit);
+		if (count($content)>=$limit) {
+		array_pop($content);
+		$content = implode(" ",$content).'...';
+		} else {
+		$content = implode(" ",$content);
+		}
+		$content = preg_replace('/[.+]/','', $content);
+		$content = apply_filters('the_content', $content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		return $content;
+	}
 
 /*-----------------------------------------------------------------------------------*/
 /*	Images
@@ -475,11 +514,6 @@ function required_side_nav( $nav_args = '' ) {
     }
 }
 endif;
-/*-----------------------------------------------------------------------------------*/
-/*	OPTIONS PAGE
-/*-----------------------------------------------------------------------------------*/
 
-  if( file_exists(get_template_directory().'/theme-options.php') )
-    include_once(get_template_directory().'/theme-options.php');
  
 ?>
