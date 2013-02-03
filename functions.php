@@ -75,6 +75,7 @@ add_action( 'wp_head', 'all_scripts_style' );
  * 2. Theme Setup
  */
 
+    
 function foundation_setup() {
 
 	// Language Translations
@@ -102,101 +103,98 @@ add_action( 'after_setup_theme', 'foundation_setup' );
  * 3. Sidebars/ Widgets
  */
 
-function foundation_widgets() {
+	function foundation_widgets() {
 //Main sidebar
 	// Sidebar Right
-	register_sidebar( array(
-			'id' => 'foundation_sidebar_right',
-			'name' => __( 'Sidebar Right', 'foundation' ),
-			'description' => __( 'This sidebar is located on the right-hand side of each page.', 'foundation' ),
-			'before_widget' => '<div class="panel radius">',
-			'after_widget' => '</div>',
-			'before_title' => '<h5>',
-			'after_title' => '</h5>',
-		) );
+		register_sidebar( array(
+				'id' => 'foundation_sidebar_right',
+				'name' => __( 'Sidebar Right', 'foundation' ),
+				'description' => __( 'This sidebar is located on the right-hand side of each page.', 'foundation' ),
+				'before_widget' => '<div class="panel radius">',
+				'after_widget' => '</div>',
+				'before_title' => '<h5>',
+				'after_title' => '</h5>',
+			) );
 //Main Footer Sidebar
 	// Sidebar Footer Column One
-	register_sidebar( array(
-			'id' => 'foundation_sidebar_footer_one',
-			'name' => __( 'Sidebar Footer One', 'foundation' ),
-			'description' => __( 'This sidebar is located in column one of your theme footer.', 'foundation' ),
-			'before_widget' => '<div class="three columns">',
-			'after_widget' => '</div>',
-			'before_title' => '<h5>',
-			'after_title' => '</h5>',
-		) );
+		register_sidebar( array(
+				'id' => 'foundation_sidebar_footer_one',
+				'name' => __( 'Sidebar Footer One', 'foundation' ),
+				'description' => __( 'This sidebar is located in column one of your theme footer.', 'foundation' ),
+				'before_widget' => '<div class="three columns">',
+				'after_widget' => '</div>',
+				'before_title' => '<h5>',
+				'after_title' => '</h5>',
+			) );
 
 	// Sidebar Footer Column Two
-	register_sidebar( array(
-			'id' => 'foundation_sidebar_footer_two',
-			'name' => __( 'Sidebar Footer Two', 'foundation' ),
-			'description' => __( 'This sidebar is located in column two of your theme footer.', 'foundation' ),
-			'before_widget' => '<div class="three columns">',
-			'after_widget' => '</div>',
-			'before_title' => '<h5>',
-			'after_title' => '</h5>',
-		) );
+		register_sidebar( array(
+				'id' => 'foundation_sidebar_footer_two',
+				'name' => __( 'Sidebar Footer Two', 'foundation' ),
+				'description' => __( 'This sidebar is located in column two of your theme footer.', 'foundation' ),
+				'before_widget' => '<div class="three columns">',
+				'after_widget' => '</div>',
+				'before_title' => '<h5>',
+				'after_title' => '</h5>',
+			) );
 
 	// Sidebar Footer Column Three
-	register_sidebar( array(
-			'id' => 'foundation_sidebar_footer_three',
-			'name' => __( 'Sidebar Footer Three', 'foundation' ),
-			'description' => __( 'This sidebar is located in column three of your theme footer.', 'foundation' ),
-			'before_widget' => '<div class="three columns">',
-			'after_widget' => '</div>',
-			'before_title' => '<h5>',
-			'after_title' => '</h5>',
-		) );
+			register_sidebar( array(
+					'id' => 'foundation_sidebar_footer_three',
+					'name' => __( 'Sidebar Footer Three', 'foundation' ),
+					'description' => __( 'This sidebar is located in column three of your theme footer.', 'foundation' ),
+					'before_widget' => '<div class="three columns">',
+					'after_widget' => '</div>',
+					'before_title' => '<h5>',
+					'after_title' => '</h5>',
+			) );
 
 	// Sidebar Footer Column Four
-	register_sidebar( array(
-			'id' => 'foundation_sidebar_footer_four',
-			'name' => __( 'Sidebar Footer Four', 'foundation' ),
-			'description' => __( 'This sidebar is located in column four of your theme footer.', 'foundation' ),
-			'before_widget' => '<div class="three columns">',
-			'after_widget' => '</div>',
-			'before_title' => '<h5>',
-			'after_title' => '</h5>',
-		) );
+			register_sidebar( array(
+					'id' => 'foundation_sidebar_footer_four',
+					'name' => __( 'Sidebar Footer Four', 'foundation' ),
+					'description' => __( 'This sidebar is located in column four of your theme footer.', 'foundation' ),
+					'before_widget' => '<div class="three columns">',
+					'after_widget' => '</div>',
+					'before_title' => '<h5>',
+					'after_title' => '</h5>',
+			) );
 //Widgets For Home Page
 		// Home Widget 1
-	register_sidebar( array(
-			'id' => 'foundation_home_one',
-			'name' => __( 'Home Widget One', 'foundation' ),
-			'description' => __( 'This sidebar is located on the left side of the home page widget area.', 'foundation' ),
-			'before_widget' => '<div>',
-			'after_widget' => '</div>',
-			'before_title' => '<h5>',
-			'after_title' => '</h5>',
-		) );
+			register_sidebar( array(
+					'id' => 'foundation_home_one',
+					'name' => __( 'Home Widget One', 'foundation' ),
+					'description' => __( 'This sidebar is located on the left side of the home page widget area.', 'foundation' ),
+					'before_widget' => '<div>',
+					'after_widget' => '</div>',
+					'before_title' => '<h5>',
+					'after_title' => '</h5>',
+			) );
 
-	// Home Widget 2
-	register_sidebar( array(
-			'id' => 'foundation_home_two',
-			'name' => __( 'Home Widget Two', 'foundation' ),
-			'description' => __( 'This sidebar is located in the center of the home page widget area.', 'foundation' ),
-			'before_widget' => '<div>',
-			'after_widget' => '</div>',
-			'before_title' => '<h5>',
-			'after_title' => '</h5>',
-		) );
+			// Home Widget 2
+			register_sidebar( array(
+					'id' => 'foundation_home_two',
+					'name' => __( 'Home Widget Two', 'foundation' ),
+					'description' => __( 'This sidebar is located in the center of the home page widget area.', 'foundation' ),
+					'before_widget' => '<div>',
+					'after_widget' => '</div>',
+					'before_title' => '<h5>',
+					'after_title' => '</h5>',
+			) );
 
-	// Home Widget 3
-	register_sidebar( array(
-			'id' => 'foundation_home_three',
-			'name' => __( 'Home Widget Three', 'foundation' ),
-			'description' => __( 'This sidebar is located on the right side of the home page widget area.', 'foundation' ),
-			'before_widget' => '<div>',
-			'after_widget' => '</div>',
-			'before_title' => '<h5>',
-			'after_title' => '</h5>',
-		) );
+			// Home Widget 3
+			register_sidebar( array(
+					'id' => 'foundation_home_three',
+					'name' => __( 'Home Widget Three', 'foundation' ),
+					'description' => __( 'This sidebar is located on the right side of the home page widget area.', 'foundation' ),
+					'before_widget' => '<div>',
+					'after_widget' => '</div>',
+					'before_title' => '<h5>',
+					'after_title' => '</h5>',
+			) );
+		}
 
-	}
-
-add_action( 'widgets_init', 'foundation_widgets' );
-
-
+	add_action( 'widgets_init', 'foundation_widgets' );
 
 /**
  * 4. Other Fixes
@@ -210,28 +208,33 @@ function foundation_shim () {
 
 add_action('wp_head', 'foundation_shim');
 
-
 // Custom Avatar Classes
+	function foundation_avatar_css($class) {
+		$class = str_replace("class='avatar", "class='author_gravatar left ", $class) ;
+		return $class;
+	}
 
-
-function foundation_avatar_css($class) {
-	$class = str_replace("class='avatar", "class='author_gravatar left ", $class) ;
-	return $class;
-}
-
-add_filter('get_avatar','foundation_avatar_css');
-
+	add_filter('get_avatar','foundation_avatar_css');
 
 // Custom Post Excerpt
-
-
-function new_excerpt_more($more) {
-    global $post;
-	return '... <br><br><a class="small button secondary" href="'. get_permalink($post->ID) . '">Continue Reading</a>';
-}
+	function new_excerpt_more($more) {
+		global $post;
+		return '... <br><br><a class="small button secondary" href="'. get_permalink($post->ID) . '">Continue Reading</a>';
+	}
 add_filter('excerpt_more', 'new_excerpt_more');
 
+// Limit Post Word Count
+	function new_excerpt_length($length) {
+		return 50;
+	}
+	add_filter('excerpt_length', 'new_excerpt_length');
 
+/// add home link to menu
+	function home_page_menu_args( $args ) {
+	$args['show_home'] = true;
+	return $args;
+	}
+	add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
 
 /*-----------------------------------------------------------------------------------*/
 /*	Images
