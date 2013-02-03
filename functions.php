@@ -118,7 +118,7 @@ $output = $copyright;
 }
 return $output;
 }
-<<<<<<< HEAD
+
 if ( ! function_exists( 'twentytwelve_comment' ) ) :
 /**
  * Template for comments and pingbacks.
@@ -182,7 +182,7 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 	endswitch; // end comment_type check
 }
 endif;
-=======
+
 /*-----------------------------------------------------------------------------------*/
 /*	MENU
 /*-----------------------------------------------------------------------------------*/
@@ -275,7 +275,7 @@ class REQ_Foundation_Walker extends Walker_Nav_Menu {
 		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
 		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
->>>>>>> menu-fix-mach2
+
 
 		$item_output  = $args->before;
 		$item_output .= '<a '. $attributes .'>';
