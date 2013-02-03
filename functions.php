@@ -12,7 +12,8 @@ require('functions/functions-p.php');
 
 require('functions/pagination.php');
 require('functions/better-excerpts.php');
-
+require('functions/comments-function.php');
+require( get_template_directory() . '/inc/shortcodes.php' );
 
 
 //FROM FOUNDATION
@@ -21,9 +22,15 @@ require('functions/functions-f.php');
 //http://leemason.github.com/NHP-Theme-Options-Framework/
 get_template_part('nhp', 'options');
 
-//All enqueuing in one big function
 
-
+/*-----------------------------------------------------------------------------------*/
+/*	Foundation Setup
+/*-----------------------------------------------------------------------------------*/
+/*		1. Scripts, Styles 2. Setup Framework 3. Sidebars/ Widgets 4. Other Fixes
+/*-----------------------------------------------------------------------------------*/
+/**
+ * 1. Enqueue all scripts and styles
+ */
 function all_scripts_style() {
 
 	if (!is_admin()) {
@@ -64,11 +71,167 @@ function all_scripts_style() {
 
 
 add_action( 'wp_head', 'all_scripts_style' );
+/**
+ * 2. Theme Setup
+ */
 
+function foundation_setup() {
 
+	// Language Translations
+	load_theme_textdomain( 'foundation', get_template_directory() . '/languages' );
 
-function my_theme_scripts_function() {
+	// Custom Editor Style Support
+	add_editor_style();
+
+	
+
+	// Automatic Feed Links & Post Formats
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
+
+	// Custom Background
+	add_theme_support( 'custom-background', array(
+		'default-color' => 'FFFFFF',
+	) );
+
 }
+add_action( 'after_setup_theme', 'foundation_setup' );
+
+
+/**
+ * 3. Sidebars/ Widgets
+ */
+
+function foundation_widgets() {
+//Main sidebar
+	// Sidebar Right
+	register_sidebar( array(
+			'id' => 'foundation_sidebar_right',
+			'name' => __( 'Sidebar Right', 'foundation' ),
+			'description' => __( 'This sidebar is located on the right-hand side of each page.', 'foundation' ),
+			'before_widget' => '<div class="panel radius">',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
+//Main Footer Sidebar
+	// Sidebar Footer Column One
+	register_sidebar( array(
+			'id' => 'foundation_sidebar_footer_one',
+			'name' => __( 'Sidebar Footer One', 'foundation' ),
+			'description' => __( 'This sidebar is located in column one of your theme footer.', 'foundation' ),
+			'before_widget' => '<div class="three columns">',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
+
+	// Sidebar Footer Column Two
+	register_sidebar( array(
+			'id' => 'foundation_sidebar_footer_two',
+			'name' => __( 'Sidebar Footer Two', 'foundation' ),
+			'description' => __( 'This sidebar is located in column two of your theme footer.', 'foundation' ),
+			'before_widget' => '<div class="three columns">',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
+
+	// Sidebar Footer Column Three
+	register_sidebar( array(
+			'id' => 'foundation_sidebar_footer_three',
+			'name' => __( 'Sidebar Footer Three', 'foundation' ),
+			'description' => __( 'This sidebar is located in column three of your theme footer.', 'foundation' ),
+			'before_widget' => '<div class="three columns">',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
+
+	// Sidebar Footer Column Four
+	register_sidebar( array(
+			'id' => 'foundation_sidebar_footer_four',
+			'name' => __( 'Sidebar Footer Four', 'foundation' ),
+			'description' => __( 'This sidebar is located in column four of your theme footer.', 'foundation' ),
+			'before_widget' => '<div class="three columns">',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
+//Widgets For Home Page
+		// Home Widget 1
+	register_sidebar( array(
+			'id' => 'foundation_home_one',
+			'name' => __( 'Home Widget One', 'foundation' ),
+			'description' => __( 'This sidebar is located on the left side of the home page widget area.', 'foundation' ),
+			'before_widget' => '<div>',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
+
+	// Home Widget 2
+	register_sidebar( array(
+			'id' => 'foundation_home_two',
+			'name' => __( 'Home Widget Two', 'foundation' ),
+			'description' => __( 'This sidebar is located in the center of the home page widget area.', 'foundation' ),
+			'before_widget' => '<div>',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
+
+	// Home Widget 3
+	register_sidebar( array(
+			'id' => 'foundation_home_three',
+			'name' => __( 'Home Widget Three', 'foundation' ),
+			'description' => __( 'This sidebar is located on the right side of the home page widget area.', 'foundation' ),
+			'before_widget' => '<div>',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
+
+	}
+
+add_action( 'widgets_init', 'foundation_widgets' );
+
+
+
+/**
+ * 4. Other Fixes
+ */
+//HTML5 IE Shim
+function foundation_shim () {
+    echo '<!--[if lt IE 9]>';
+    echo '<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>';
+    echo '<![endif]-->';
+}
+
+add_action('wp_head', 'foundation_shim');
+
+
+// Custom Avatar Classes
+
+
+function foundation_avatar_css($class) {
+	$class = str_replace("class='avatar", "class='author_gravatar left ", $class) ;
+	return $class;
+}
+
+add_filter('get_avatar','foundation_avatar_css');
+
+
+// Custom Post Excerpt
+
+
+function new_excerpt_more($more) {
+    global $post;
+	return '... <br><br><a class="small button secondary" href="'. get_permalink($post->ID) . '">Continue Reading</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
 
 /*-----------------------------------------------------------------------------------*/
 /*	Images
@@ -80,14 +243,13 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'full-size',  9999, 9999, false );
 	add_image_size( 'post-thumb',  235, 180, true );
 	add_image_size( 'post-full',  600, 9999, false );
-	//for orbit
+//for orbit
 	add_image_size( 'wpf-featured', 639, 300, true );
 	add_image_size ( 'wpf-home-featured', 970, 364, true );
 
 	}
-
-function after_setup_theme(){ 
-			// Adds support for featured images and register some default image sizes
+// Adds support for featured images and register some default image sizes
+function after_setup_theme(){ 	
 			add_theme_support( 'post-thumbnails' ); 
 			add_image_size( 'orbit-slide', 540, 450, true ); 
 			add_image_size( 'orbit-slide-small', 100, 83, true ); 
@@ -118,70 +280,6 @@ $output = $copyright;
 }
 return $output;
 }
-
-if ( ! function_exists( 'twentytwelve_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * To override this walker in a child theme without modifying the comments template
- * simply create your own twentytwelve_comment(), and that function will be used instead.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since Twenty Twelve 1.0
- */
-function twentytwelve_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
-		// Display trackbacks differently than normal comments.
-	?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e( 'Pingback:', 'twentytwelve' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?></p>
-	<?php
-			break;
-		default :
-		// Proceed with normal comments.
-		global $post;
-	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<header class="comment-meta comment-author vcard">
-				<?php
-					echo get_avatar( $comment, 44 );
-					printf( '<cite class="fn">%1$s %2$s</cite>',
-						get_comment_author_link(),
-						// If current post author is also comment author, make it known visually.
-						( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'twentytwelve' ) . '</span>' : ''
-					);
-					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-						esc_url( get_comment_link( $comment->comment_ID ) ),
-						get_comment_time( 'c' ),
-						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s', 'twentytwelve' ), get_comment_date(), get_comment_time() )
-					);
-				?>
-			</header><!-- .comment-meta -->
-
-			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentytwelve' ); ?></p>
-			<?php endif; ?>
-
-			<section class="comment-content comment">
-				<?php comment_text(); ?>
-				<?php edit_comment_link( __( 'Edit', 'twentytwelve' ), '<p class="edit-link">', '</p>' ); ?>
-			</section><!-- .comment-content -->
-
-			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'twentytwelve' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</div><!-- .reply -->
-		</article><!-- #comment-## -->
-	<?php
-		break;
-	endswitch; // end comment_type check
-}
-endif;
 
 /*-----------------------------------------------------------------------------------*/
 /*	MENU
