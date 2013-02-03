@@ -3,24 +3,10 @@
 /*-----------------------------------------------------------------------------------*/
 /*	Include functions
 /*-----------------------------------------------------------------------------------*/
-
-//FROM PRONTO
-
-//main pronto functions
-require('functions/functions-p.php');
-//other pronto functions
-
 require('functions/pagination.php');
 require('functions/better-excerpts.php');
 require('functions/comments-function.php');
 require( get_template_directory() . '/inc/shortcodes.php' );
-
-
-//FROM FOUNDATION
-require('functions/functions-f.php');
-// NHP THEME OPTIONS
-//http://leemason.github.com/NHP-Theme-Options-Framework/
-get_template_part('nhp', 'options');
 
 
 /*-----------------------------------------------------------------------------------*/
