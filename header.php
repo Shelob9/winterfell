@@ -51,7 +51,7 @@
 
 
 <div class="row">
-	<?php get_sidebar() ?>
+	
 
 	<?php
 //Clearfix needed for Masonry to display right, but can not precede slider.
