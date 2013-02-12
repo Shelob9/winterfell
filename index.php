@@ -38,14 +38,6 @@
 
 
 
-<<<<<<< HEAD
 
-</div>
-<?php get_sidebar() ?>
-=======
-		
-	</div>
-</div>
->>>>>>> mason3
 
 <?php get_footer(' '); ?>
