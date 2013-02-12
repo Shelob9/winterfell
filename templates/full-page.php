@@ -6,8 +6,9 @@
 
 get_header(); ?>
 
+
     <!-- Main Content -->
-    <div class="twelve columns" role="content">
+    <div class="nine columns" role="content">
 
 		<?php if ( have_posts() ) : ?>
 

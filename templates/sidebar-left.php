@@ -5,7 +5,7 @@
  */
 
 get_header(); ?>
-<?php get_sidebar(); ?>
+
 
     <!-- Main Content -->
     <div class="nine columns" role="content">
@@ -20,5 +20,7 @@ get_header(); ?>
 
     </div>
     <!-- End Main Content -->
-
+<div class="three columns panel pull-nine">
+	<?php get_sidebar(); ?>
+</div>
 <?php get_footer(); ?>
