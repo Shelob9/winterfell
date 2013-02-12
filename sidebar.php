@@ -11,8 +11,8 @@
 ?>
 
 <!-- Sidebar -->
-<aside class="three columns panel radius">
 
+<aside>
 <?php if ( dynamic_sidebar('Sidebar Right') ) : elseif( current_user_can( 'edit_theme_options' ) ) : ?>
 
 	<h5><?php _e( 'No widgets found.', 'foundaton' ); ?></h5>
