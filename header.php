@@ -47,7 +47,7 @@
 	<div class="row">
 		<?php get_template_part( 'nav' ); ?>	
 	</div>
-<!-- Begin Page -->
+<!-- Begin The Page -->
 
 
 

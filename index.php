@@ -6,13 +6,7 @@
 
 ?>
 <?php get_header(' '); ?>
-<?php
-//Clearfix needed for Masonry to display right, but can not precede slider.
-	
-	if (  !is_home() ) {?>
-	<div class="row id="main">
-	<div class="nine columns" >
-	<?php } ?>
+
 
 <?php
 //Do slider only if is home page.
