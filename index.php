@@ -44,8 +44,5 @@ if (  is_home() ) {?>
 
 </div>
 <?php get_sidebar() ?>
-<?php
-if (  is_home() ) {?>
-</div>
-<?php } ?>
+
 <?php get_footer(' '); ?>
