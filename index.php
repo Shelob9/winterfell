@@ -9,7 +9,7 @@
 
 	
 <div class="row" id="mains">
-<div class="nine columns" id="main-9">
+
 <?php
 //Do slider only if is home page.
 if (  is_home() ) {?>
@@ -44,8 +44,5 @@ if (  is_home() ) {?>
 
 </div>
 <?php get_sidebar() ?>
-<?php
-if (  is_home() ) {?>
-</div>
-<?php } ?>
+
 <?php get_footer(' '); ?>
