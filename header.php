@@ -50,12 +50,7 @@
 <!-- Begin Page -->
 
 
-<div class="row">
+
 	
 
-	<?php
-//Clearfix needed for Masonry to display right, but can not precede slider.
 	
-	if (  is_home() ) {?>
-	<div class="nine columns" >
-	<?php } ?>
