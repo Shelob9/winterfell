@@ -9,8 +9,8 @@
  * @since Foundation, for WordPress 1.0
  */
 ?>
-<div class="row">
-	<article style="background:#D8D2B1; border:1px solid #799E65;" class="twelve columns centered panel callout radius">
+
+	<article style="background:#D8D2B1; border:1px solid #799E65;" class="twelve columns panel callout radius">
 		<header>
 			<hgroup>
 				<h2><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'foundation' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
@@ -37,5 +37,5 @@
 		</footer>
 
 	</article>
-</div>
+
 <hr />

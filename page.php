@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php get_sidebar(); ?>
+
 
     <!-- Main Content -->
     <div class="nine columns" role="content">
@@ -14,5 +14,5 @@
 
     </div>
     <!-- End Main Content -->
-
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

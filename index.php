@@ -34,10 +34,10 @@ if (  is_home() ) {?>
 	</div>
 <!-- /pagination -->
 
-<?php if (  is_home() ) {?>
+
 
 </div>
-<?php } ?>
+
 
 </div>
 <?php get_sidebar() ?>

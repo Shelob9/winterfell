@@ -55,9 +55,7 @@
 
 	<?php
 //Clearfix needed for Masonry to display right, but can not precede slider.
-	if (  !is_home() ) {?>
-	<div class="nine columns" class="clearfix">
-	<?php } ?>
-	<?php if (  is_home() ) {?>
-	<div class="nine columns">
+	
+	if (  is_home() ) {?>
+	<div class="nine columns" >
 	<?php } ?>

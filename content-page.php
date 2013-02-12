@@ -10,7 +10,7 @@
  */
 ?>
 
-<article>
+<article class="twelve columns panel callout radius" style="background:#D8D2B1; border:1px solid #799E65;">
 
 	<header>
 		<h2><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'foundation' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
