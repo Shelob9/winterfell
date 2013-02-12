@@ -2,35 +2,10 @@
 /**
  * Create pagination
  */
-
-function foundation_pagination() {
-
-global $wp_query;
-
-$big = 999999999;
-
-$links = paginate_links( array(
-	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-	'format' => '?paged=%#%',
-	'prev_next' => true,
-	'prev_text' => '&laquo;',
-	'next_text' => '&raquo;',
-	'current' => max( 1, get_query_var('paged') ),
-	'total' => $wp_query->max_num_pages,
-	'type' => 'list'
-)
-);
-
-$pagination = str_replace('page-numbers','pagination',$links);
-
-echo $pagination;
-
-}
-
-//pagination function
+//http://design.sparklette.net/teaches/how-to-add-wordpress-pagination-without-a-plugin/
 function pagination($pages = '', $range = 4)
-{
-     $showitems = ($range * 2)+1; 
+{  
+     $showitems = ($range * 2)+1;  
  
      global $paged;
      if(empty($paged)) $paged = 1;
@@ -43,11 +18,11 @@ function pagination($pages = '', $range = 4)
          {
              $pages = 1;
          }
-     }  
+     }   
  
      if(1 != $pages)
      {
-         echo "<div class=\"pagination clearfix\">";
+         echo "<div class=\"pagination\"><span>Page ".$paged." of ".$pages."</span>";
          if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo; First</a>";
          if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo; Previous</a>";
  
@@ -59,9 +34,10 @@ function pagination($pages = '', $range = 4)
              }
          }
  
-         if ($paged < $pages && $showitems < $pages) echo "<a href=\"".get_pagenum_link($paged + 1)."\">Next &rsaquo;</a>";
+         if ($paged < $pages && $showitems < $pages) echo "<a href=\"".get_pagenum_link($paged + 1)."\">Next &rsaquo;</a>";  
          if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>Last &raquo;</a>";
          echo "</div>\n";
      }
 }
+
 ?>

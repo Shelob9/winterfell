@@ -27,10 +27,12 @@
 
 
 
-		<hr />
-		<div cass="row" style="margin-bottom:4px;">
+		
+		<div cass="row" style="margin-bottom:14px;">
 			<div class="four columns centered">
-				<?php if (function_exists("pagination")) { pagination(); } ?>
+				<?php if (function_exists("pagination")) {
+				pagination();
+				} ?>
 			</div>	
 		</div>
 		<!-- /pagination -->
