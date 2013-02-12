@@ -120,4 +120,16 @@ position:relative;
 font-size:11px;
 line-height:13px;
 }
+
+#footer-sidebar{
+display: inline-block;
+}
+
+#footer-sidebar:after {
+display:block;
+visibility:hidden;
+clear:both;
+height:0;
+content: ".";
+}
  
