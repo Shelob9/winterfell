@@ -113,6 +113,11 @@ color:#fff;
 }
 #total-wrap {background: #fefae5; margin-top:10px; margin-bottom:10px;padding-left:16px;padding-right:16px;}
 
+.post-thumb {
+float:left;
+margin-right: 4px;
+margin-bottom: 4px;
+}
 .pagination {
 clear:both;
 padding:20px 0;
