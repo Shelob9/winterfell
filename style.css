@@ -81,6 +81,7 @@ text-decoration:none;
 width:auto;
 color:#fff;
 background: #24221f;
+-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px;border-radius:6px
 }
  
 .pagination a:hover{
