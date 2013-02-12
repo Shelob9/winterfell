@@ -21,7 +21,7 @@
 <footer>
 	<div class="row">
 		
-		<div class="twelve columns panel radius callout">
+		<div class="twelve columns">
 		<?php if (  !is_home() ) {?>
 			<div class="row">
 				<?php if ( dynamic_sidebar('Sidebar Footer One') && dynamic_sidebar('Sidebar Footer Two') && dynamic_sidebar('Sidebar Footer Three') && dynamic_sidebar('Sidebar Footer Four')  ) : else : ?>
