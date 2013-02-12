@@ -25,16 +25,16 @@
 		
 		
 			<div class="row" id="footer-widgets">
-					<div class="three columns   panel radius">
-						<?php if ( dynamic_sidebar('Sidebar Footer One')  ) : else : ?>
-							<h5>Pages</h5>
-							<ul>
-							<?php wp_list_pages('title_li='); ?>
-							</ul>
-						<?php endif ?>
-					</div>
+				<div class="three columns panel radius">
+					<?php if ( dynamic_sidebar('Sidebar Footer One')  ) : else : ?>
+						<h5>Pages</h5>
+						<ul>
+						<?php wp_list_pages('title_li='); ?>
+						</ul>
+					<?php endif ?>
+				</div>
 	
-				<div class="three columns  panel radius">
+				<div class="three columns panel radius">
 					<?php if ( dynamic_sidebar('Sidebar Footer Two')  ) : else : ?>
 						<h5>Tags</h5>
 						<?php
@@ -72,6 +72,7 @@
 							</ul>
 					<?php endif ?>
 				</div>
+			</div>
 		</div>
 	
 
