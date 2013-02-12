@@ -13,7 +13,7 @@
 		<div class="three columns panel sidebar" style="float:right;">
 			<?php get_sidebar() ?>
 		</div>
-		
+		<?php get_template_part( 'slider'); ?>
 
 		<div id="masonry-wrap">	
 			<?php 
