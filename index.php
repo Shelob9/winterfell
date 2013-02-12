@@ -28,7 +28,7 @@ if (  is_home() ) {?>
 <!-- /masonry-wrap -->
 <hr />
 	<div cass="row" style="margin-bottom:4px;">
-		<div class="four columns centered panel radius">
+		<div class="four columns centered">
 			<?php if (function_exists("pagination")) { pagination(); } ?>
 		</div>	
 	</div>
