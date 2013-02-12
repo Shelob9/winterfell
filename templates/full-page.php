@@ -5,7 +5,7 @@
  */
 
 get_header(); ?>
-</div>
+
     <!-- Main Content -->
     <div class="twelve columns" role="content">
 
