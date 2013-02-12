@@ -6,18 +6,14 @@
 
 ?>
 <?php get_header(' '); ?>
-<?php
-//Clearfix needed for Masonry to display right, but can not precede slider.
-	
-	if (  !is_home() ) {?>
-	<div class="row id="main">
-	<div class="nine columns" >
-	<?php } ?>
 
+	
+<div class="row" id="mains">
+<div class="nine columns" id="main-9">
 <?php
 //Do slider only if is home page.
 if (  is_home() ) {?>
-<div class="nine columns" >	
+
 		<?php get_template_part( 'slider'); ?>
 
 	
@@ -33,6 +29,9 @@ if (  is_home() ) {?>
    		
  </div>	
 <!-- /masonry-wrap -->
+
+
+
 <hr />
 	<div cass="row" style="margin-bottom:4px;">
 		<div class="four columns centered">
@@ -43,9 +42,10 @@ if (  is_home() ) {?>
 
 
 
-
-
-
 </div>
 <?php get_sidebar() ?>
+<?php
+if (  is_home() ) {?>
+</div>
+<?php } ?>
 <?php get_footer(' '); ?>

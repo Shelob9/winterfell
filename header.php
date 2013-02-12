@@ -44,7 +44,7 @@
 			
 		
 		</header>
-	<div class="row">
+	<div class="row" id="nav-row">
 		<?php get_template_part( 'nav' ); ?>	
 	</div>
 <!-- Begin Page -->
