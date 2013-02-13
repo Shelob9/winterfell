@@ -10,7 +10,7 @@
 	
 <div class="row" id="mains">
 	<div class="twelve columns">
-		<div class="three columns panel sidebar" style="float:right;">
+		<div class="three columns panel radius sidebar">
 			<?php get_sidebar() ?>
 		</div>
 		<?php if (is_home() )
