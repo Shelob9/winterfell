@@ -13,8 +13,10 @@
 		<div class="three columns panel sidebar" style="float:right;">
 			<?php get_sidebar() ?>
 		</div>
-		<?php get_template_part( 'slider'); ?>
-
+		<?php if (is_home() )
+		{ get_template_part( 'slider'); }
+		?>
+	
 		<div id="masonry-wrap">	
 			<?php 
 			if (have_posts()) :
