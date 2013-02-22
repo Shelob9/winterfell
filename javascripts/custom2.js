@@ -28,7 +28,16 @@ jQuery(function($){
     // apply layout logic to all bricks
     this.layout( this.$bricks, callback );
   };
-  $('#masonry-wrap').masonry({
+});//end noconflict	
+	}); // END doc ready
+}); // END function
+
+
+jQuery(function($){
+	$(document).ready(function(){
+		
+		//masonry
+		$('#masonry-wrap').masonry({
 		
 		  itemSelector: '.loop-entry',
 		  cornerStampSelector: '.sidebar',
@@ -40,16 +49,13 @@ jQuery(function($){
 				queue: false
 			  },
 		columnWidth: function( containerWidth ) {
-    	return containerWidth / 4;
+    	return containerWidth / 5;
 		  }
-  
-  
-});//end noconflict	
-	}); // END doc ready
-}); // END function
 
+			  
+	
 
-
+		});
 		
 		jQuery(document).ready(function($) { //noconflict wrapper
     $('input#submit').addClass('button');
