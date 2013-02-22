@@ -1,10 +1,7 @@
-
-
 jQuery(function($){
 	$(document).ready(function(){
 	
-	 // Masonry corner stamp modifications
-  $.Mason.prototype.resize = function() {
+	$.Mason.prototype.resize = function() {
     this._getColumns();
     this._reLayout();
   };
@@ -31,23 +28,36 @@ jQuery(function($){
     // apply layout logic to all bricks
     this.layout( this.$bricks, callback );
   };
+});//end noconflict	
+	}); // END doc ready
+}); // END function
 
-  $(function(){
-    
-    $('#masonry-wrap').masonry({
-      itemSelector: '.loop-entry',
-	cornerStampSelector: '.sidebar',
 
+jQuery(function($){
+	$(document).ready(function(){
+		
+		//masonry
+		$('#masonry-wrap').masonry({
+		
+		  itemSelector: '.loop-entry',
+		  cornerStampSelector: '.sidebar',
+		  
 			  isAnimated: true,
-			columnWidth: function( containerWidth ) {
-    return containerWidth / 4;
-  }
-    });
-    
-  });
+			  animationOptions: {
+				duration: 200,
+				easing: 'linear',
+				queue: false
+			  },
+		columnWidth: function( containerWidth ) {
+    	return containerWidth / 5;
+		  }
+
+			  
+	
+
+		});
 		
-		
-jQuery(document).ready(function($) { //noconflict wrapper
+		jQuery(document).ready(function($) { //noconflict wrapper
     $('input#submit').addClass('button');
 });//end noconflict
 
@@ -55,4 +65,4 @@ jQuery(document).ready(function($) { //noconflict wrapper
 		
 	
 	}); // END doc ready
-});// END function
+}); // END function
