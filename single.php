@@ -24,7 +24,7 @@ get_header(); ?>
 
     </div>
     <!-- End Main Content -->
-<div class="three columns panel radius sidebar">
+<div class="three columns panel">
 	<?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>
