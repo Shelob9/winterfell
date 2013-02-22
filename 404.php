@@ -1,6 +1,6 @@
 <?php get_header(' '); ?>
-<div class="three columns panel sidebar">
-	<?php get_sidebar() ?>
+<div class="three columns panel sidebar" style="float:right;">
+			<?php get_sidebar() ?>
 </div>
 <div class="nine columns panel callout radius" role="content"  style="background:#D8D2B1; border:1px solid #799E65;">
  
