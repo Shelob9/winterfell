@@ -1,7 +1,7 @@
 <?php while (have_posts()) : the_post(); ?>  
 
 
-<div class="loop-entry three columns panel bubbler" style="background:white;" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+<div class="loop-entry three columns panel" style="background:white;" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
         <div class="loop-entry-thumbnail">
             <a href="<?php the_permalink(' ') ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('post-thumb'); ?></a>
         </div>
