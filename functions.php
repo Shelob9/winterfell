@@ -41,7 +41,7 @@
 		
 		//MASONRY
 			wp_enqueue_script('masonry', get_template_directory_uri() . '/javascripts/jquery.masonry.min.js');
-			wp_enqueue_script('custom', get_template_directory_uri() . '/javascripts/custom.js');
+			wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/javascripts/custom.js');
 		
 		// JS for foundation
 			wp_enqueue_script( 'foundation', get_template_directory_uri() . '/javascripts/foundation.min.js', array(), '1.0', false );
@@ -57,7 +57,7 @@
 		// flexslider
 			if(is_home()) {
 				wp_enqueue_script('flexslider', get_template_directory_uri().'/javascripts/jquery.flexslider-min.js', array('jquery'));
-				wp_enqueue_script('flexslider-init', get_template_directory_uri().'/javascripts/flexslider-init.js', array('jquery', 'flexslider'));
+				wp_enqueue_script('flexslider-init', get_stylesheet_directory_uri().'/javascripts/flexslider-init.js', array('jquery', 'flexslider'));
 				wp_enqueue_style('flexslider', get_template_directory_uri().'/stylesheets/flexslider.css');
 			}
 		}
