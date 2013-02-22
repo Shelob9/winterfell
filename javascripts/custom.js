@@ -1,10 +1,11 @@
-
-
 jQuery(function($){
 	$(document).ready(function(){
 		
-		//masonry
-		 $('#masonry-wrap').masonry({
+		
+
+  $(function(){
+    
+    $('#masonry-wrap').masonry({
       itemSelector: '.loop-entry',
       gutterWidth: '10',
       isFitWidth: 'false',
@@ -12,7 +13,18 @@ jQuery(function($){
       columnWidth: function( containerWidth ) {
     return containerWidth / 4;
   }
-		});
+      cornerStampSelector: '.sidebar'
+      }
+    });
+    
+  });
+  
+  
+		
+		jQuery(document).ready(function($) { //noconflict wrapper
+    $('input#submit').addClass('button');
+});//end noconflict
+
 
 		
 	
