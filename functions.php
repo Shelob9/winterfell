@@ -51,7 +51,12 @@
 			
 		//style for social webicons
 			wp_enqueue_style( 'webicons', get_template_directory_uri().'/stylesheets/fc-webicons.css' );
-
+		
+		//navigation (from _S)
+		wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', null, '20120206', true );
+		if ( is_singular() && wp_attachment_is_image() ) {
+		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+	}
 		}	
 	}
 	add_action( 'wp_head', 'all_scripts_style' );
@@ -264,5 +269,10 @@
 /*-----------------------------------------------------------------------------------*/
 /*	MENU
 /*-----------------------------------------------------------------------------------*/
-
+	/**
+	 * This theme uses wp_nav_menu() in one location.
+	 */
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', '_s' ),
+	) );
 ?>

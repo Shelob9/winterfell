@@ -44,9 +44,12 @@
 			
 		
 		</header>
-	<div class="row" id="nav-row">
-		<?php get_template_part( 'nav' ); ?>	
-	</div>
+	<nav role="navigation" class="site-navigation main-navigation row" id="site-navigation">
+			<h1 class="menu-toggle"><?php _e( 'Menu', '_s' ); ?></h1>
+			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a></div>
+
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav><!-- .site-navigation .main-navigation -->
 <!-- Begin Page -->
 
 
