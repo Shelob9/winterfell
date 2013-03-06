@@ -6,7 +6,7 @@ jQuery(function($){
 		  itemSelector: '.loop-entry',
 			  isAnimated: true,
 			    columnWidth: function( containerWidth ) {
-    return containerWidth / 4;
+    return containerWidth / 3;
   }
 		});
 

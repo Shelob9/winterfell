@@ -10,38 +10,27 @@
 	
 <div class="row" id="mains">
 	<div class="twelve columns">
-		<div class="three columns panel sidebar" style="float:right;">
+		<div class="three columns panel sidebar">
 			<?php get_sidebar() ?>
 		</div>
 		<?php if (is_home() )
 		{ get_template_part( 'slider'); }
 		?>
 	
-		<div id="masonry-wrap">	
+		<div class="nine columns" id="masonry-wrap">	
 			<?php 
 			if (have_posts()) :
 				get_template_part( 'loop' , 'entry');
 			endif;
 			?>
-
-		</div>	
-		<!-- /masonry-wrap -->
-
-
-
-		
-		<div cass="row" style="margin-bottom:14px;">
-			<div class="four columns centered">
-				<?php if (function_exists("pagination")) {
-				pagination();
-				} ?>
-			</div>	
 		</div>
+		<!-- /masonry-wrap -->
+			<div cass="row" style="margin-bottom:14px;">
+				<div class="four columns centered">
+					<?php if (function_exists("pagination")) {
+					pagination();
+					} ?>
+				</div>	
+			</div>
 		<!-- /pagination -->
-
-
-
-
-
-
 <?php get_footer(' '); ?>
