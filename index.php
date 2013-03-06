@@ -26,7 +26,7 @@
 			
 		
 		<!-- /pagination -->
-		<div class="three columns panel sidebar">
+		<div class="three columns panel radius sidebar">
 			<?php get_sidebar() ?>
 		</div>
 		<hr />

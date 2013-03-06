@@ -6,6 +6,7 @@ body {
     
     width: 90%;
     margin: 10px auto;
+    
 }
 
 /* this is the menu CSS for the select menu */
@@ -25,6 +26,7 @@ body {
     color: #fff;
     background: #000;
     border: 1px solid #ccc;
+    
 }
 
 /* The media query for screens larger than 640px */
@@ -60,6 +62,12 @@ body {
         font-size: 1em;
         text-decoration: none;
         font-weight: normal;
+        -webkit-border-radius:3px;
+        -moz-border-radius:3px;
+        -ms-border-radius:3px;
+        -o-border-radius:3px;
+        border-radius:3px;
+		border:solid 1px #e6e6e6;
     }
 
     .menu-main-menu-container ul li a:hover {
