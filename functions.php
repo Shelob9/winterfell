@@ -31,8 +31,7 @@
 	function all_scripts_style() {
 
 		if (!is_admin()) {
-		//get theme options
-			global $options;
+		
 	
 		//Load jquery
 			wp_enqueue_script('jquery');
