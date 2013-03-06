@@ -3,9 +3,7 @@
 /*-----------------------------------------------------------------------------------*/
 /*	Include Additional Functions Files
 /*-----------------------------------------------------------------------------------*/
-//theme options
-	if( file_exists(get_template_directory().'/inc/theme-options.php') )
-    include_once(get_template_directory().'/inc/theme-options.php');
+
     
 //pagination
 	if( file_exists(get_template_directory().'/inc/pagination.php') )
@@ -54,13 +52,7 @@
 		//style for social webicons
 			wp_enqueue_style( 'webicons', get_template_directory_uri().'/stylesheets/fc-webicons.css' );
 
-		// flexslider
-			if(is_home()) {
-				wp_enqueue_script('flexslider', get_template_directory_uri().'/javascripts/jquery.flexslider-min.js', array('jquery'));
-				wp_enqueue_script('flexslider-init', get_stylesheet_directory_uri().'/javascripts/flexslider-init.js', array('jquery', 'flexslider'));
-				wp_enqueue_style('flexslider', get_template_directory_uri().'/stylesheets/flexslider.css');
-			}
-		}
+		
 	}
 	add_action( 'wp_head', 'all_scripts_style' );
 /**
