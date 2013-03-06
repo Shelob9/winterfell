@@ -51,6 +51,10 @@
 			
 		//style for social webicons
 			wp_enqueue_style( 'webicons', get_template_directory_uri().'/stylesheets/fc-webicons.css' );
+			
+		//style/JS for navigation
+			wp_enqueue_script ('nav', get_template_directory_uri().'/javascripts/nav.js');
+			wp_enqueue_style ('nav-style', get_template_directory_uri().'/stylesheets/');
 
 		}	
 	}
