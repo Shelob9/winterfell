@@ -111,7 +111,19 @@ color:#fff;
 	margin-bottom: 80px;
 	margin-left: 225px;
 }
-#total-wrap {background: #fefae5; margin-top:10px; margin-bottom:10px;padding-left:16px;padding-right:16px;}
+#total-wrap {
+background: #fefae5;
+margin-top:10px;
+margin-bottom:10px;
+padding-left:16px;
+padding-right:16px;
+-webkit-border-radius:3px;
+-moz-border-radius:3px;
+-ms-border-radius:3px;
+-o-border-radius:3px;
+border-radius:3px;
+border:solid 1px #e6e6e6;
+  }
 
 .post-thumb {
 float:left;
