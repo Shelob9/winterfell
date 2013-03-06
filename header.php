@@ -44,8 +44,8 @@
 			
 		
 		</header>
-	<div class="row" id="nav-row">
-		<?php get_template_part( 'nav' ); ?>	
+	<div class="menu-main-menu-container">
+		<?php wp_nav_menu( array('menu' => 'Main Menu' )); ?>	
 	</div>
 <!-- Begin Page -->
 
