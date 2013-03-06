@@ -268,10 +268,10 @@
 /*-----------------------------------------------------------------------------------*/
 /*	MENU
 /*-----------------------------------------------------------------------------------*/
-function register_my_menus() {
+function wf_register_my_menus() {
   register_nav_menus(
   	array( 'theme_location' => 'Main Menu', 'container_class' => 'menu-main-menu-container' )
   );
 }
-add_action( 'init', 'register_my_menus' );
+add_action( 'init', 'wf_register_my_menus' );
 ?>
