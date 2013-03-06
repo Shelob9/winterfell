@@ -28,7 +28,7 @@
 /**
  * 1. Enqueue all scripts and styles
  */
-	function all_scripts_style() {
+	function wf_all_scripts_style() {
 
 		if (!is_admin()) {
 		
@@ -57,7 +57,7 @@
 
 		}	
 	}
-	add_action( 'wp_head', 'all_scripts_style' );
+	add_action( 'wp_head', 'wf_all_scripts_style' );
 /**
  * 2. Theme Setup
  */
@@ -172,24 +172,24 @@
 	add_filter('get_avatar','foundation_avatar_css');
 
 // Custom Post Excerpt
-	function new_excerpt_more($more) {
+	function wf_new_excerpt_more($more) {
 		global $post;
 		return '... <br><br><a class="small button secondary" href="'. get_permalink($post->ID) . '">Continue Reading</a>';
 	}
-	add_filter('excerpt_more', 'new_excerpt_more');
+	add_filter('excerpt_more', 'wf_new_excerpt_more');
 
 // Limit Post Word Count
-	function new_excerpt_length($length) {
+	function wf_new_excerpt_length($length) {
 		return 50;
 	}
-	add_filter('excerpt_length', 'new_excerpt_length');
+	add_filter('excerpt_length', 'ef_new_excerpt_length');
 
 // add home link to menu
-	function home_page_menu_args( $args ) {
+	function wf_home_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 	}
-	add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
+	add_filter( 'wp_page_menu_args', 'wf_home_page_menu_args' );
 // Better Excerpts
 	function excerpt($limit) {
 		$excerpt = explode(' ', get_the_excerpt(), $limit);
@@ -242,7 +242,7 @@
 /*-----------------------------------------------------------------------------------*/
 //Dynamic Copyright For Footer
 //http://www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/
-	function comicpress_copyright() {
+	function wf_copyright() {
 		global $wpdb;
 		$copyright_dates = $wpdb->get_results("
 		SELECT
