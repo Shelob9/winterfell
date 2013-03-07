@@ -30,34 +30,26 @@
  */
 	function wf_all_scripts_style() {
 
-		if (!is_admin()) {
 		
-	
 		//Load jquery
 			wp_enqueue_script('jquery');
-		
+		// style for foundation
+			wp_enqueue_style( 'foundation', get_template_directory_uri().'/stylesheets/foundation.min.css' );
+			wp_enqueue_style( 'app', get_template_directory_uri(), array('foundation') );
+			// JS for foundation
+			wp_enqueue_script( 'foundation', get_template_directory_uri() . '/javascripts/foundation.min.js', array(), '1.0', false );
+			wp_enqueue_script( 'app', get_template_directory_uri().'/javascripts/app.js', array('foundation'), '1.0', false );
+		//style/JS for navigation
+			wp_enqueue_script ('nav', get_template_directory_uri().'/javascripts/nav.js', array('jquery') );
+			wp_enqueue_style ('nav-style', get_template_directory_uri().'/stylesheets/nav-style.css');
 		//MASONRY
 			wp_enqueue_script('masonry', get_template_directory_uri() . '/javascripts/jquery.masonry.min.js');
 			wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/javascripts/custom.js');
 		
-		// JS for foundation
-			wp_enqueue_script( 'foundation', get_template_directory_uri() . '/javascripts/foundation.min.js', array(), '1.0', false );
-			wp_enqueue_script( 'app', get_template_directory_uri().'/javascripts/app.js', array('foundation'), '1.0', false );
-	
-		// style for foundation
-			wp_enqueue_style( 'foundation', get_template_directory_uri().'/stylesheets/foundation.min.css' );
-			wp_enqueue_style( 'app', get_stylesheet_uri(), array('foundation') );
-			
-		//style for social webicons
-			wp_enqueue_style( 'webicons', get_template_directory_uri().'/stylesheets/fc-webicons.css' );
-			
-		//style/JS for navigation
-			wp_enqueue_script ('nav', get_template_directory_uri().'/javascripts/nav.js', array('jquery') );
-			wp_enqueue_style ('nav-style', get_template_directory_uri().'/stylesheets/nav-style.css');
-
-		}	
+		
+		
 	}
-	add_action( 'wp_head', 'wf_all_scripts_style' );
+	add_action( 'wp_enqueue_scripts', 'wf_all_scripts_style' );
 /**
  * 2. Theme Setup
  */
