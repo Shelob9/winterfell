@@ -182,7 +182,7 @@
 	function wf_new_excerpt_length($length) {
 		return 50;
 	}
-	add_filter('excerpt_length', 'ef_new_excerpt_length');
+	add_filter('excerpt_length', 'wf_new_excerpt_length');
 
 // add home link to menu
 	function wf_home_page_menu_args( $args ) {
