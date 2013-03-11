@@ -261,7 +261,7 @@
 /*-----------------------------------------------------------------------------------*/
 function wf_register_my_menus() {
   register_nav_menus(
-  	array( 'theme_location' => 'Main Menu', 'container_class' => 'menu-main-menu-container' )
+  	array( 'container_class' => 'main-menu' )
   );
 }
 add_action( 'init', 'wf_register_my_menus' );
