@@ -45,7 +45,8 @@
 		//MASONRY
 			wp_enqueue_script('masonry', get_template_directory_uri() . '/javascripts/jquery.masonry.min.js');
 			wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/javascripts/custom.js');
-		
+		//load main stylesheet
+			wp_enqueue_style( 'main', get_template_directory_uri().'/style.css' );
 		
 		
 	}
