@@ -4,7 +4,6 @@
  *
  * Content for our sidebar, provides prompt for logged in users to create widgets
  *
- * @package WordPress
  * @subpackage Foundation, for WordPress
  * @since Foundation, for WordPress 1.0
  */

@@ -1,11 +1,6 @@
 <?php
 /**
  * Author Box
- *
- * Displays author box with author description and thumbnail on single posts
- *
- * @package WordPress
- * @subpackage Foundation, for WordPress
  * @since Foundation, for WordPress 1.0
  */
 ?>

@@ -1,7 +1,7 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Pronto Theme
+ * 
+ * MAIN INDEX LOOP
  */
 
 ?>

@@ -4,9 +4,6 @@
  *
  * Loop content in page template (page.php)
  *
- * @package WordPress
- * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 1.0
  */
 ?>
 

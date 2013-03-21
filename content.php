@@ -4,7 +4,6 @@
  *
  * Displays content shown in the 'index.php' loop, default for 'standard' post format
  *
- * @package WordPress
  * @subpackage Foundation, for WordPress
  * @since Foundation, for WordPress 1.0
  */

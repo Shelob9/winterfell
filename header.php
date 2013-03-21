@@ -4,7 +4,6 @@
  *
  * Setup the header for our theme
  *
- * @package WordPress
  * @subpackage Foundation, for WordPress
  * @since Foundation, for WordPress 1.0
  */

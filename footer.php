@@ -4,7 +4,6 @@
  *
  * Displays content shown in the footer section
  *
- * @package WordPress
  * @subpackage Foundation, for WordPress
  * @since Foundation, for WordPress 1.0
  */

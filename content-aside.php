@@ -4,9 +4,6 @@
  *
  * Displays 'aside' custom post format
  *
- * @package WordPress
- * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 1.0
  */
 ?>
 
