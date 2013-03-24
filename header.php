@@ -27,6 +27,7 @@
 
 	<title><?php wp_title(); ?></title>
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+	<?php if ( ! isset( $content_width ) ) $content_width = 940; ?>
 	<?php wp_head(); ?>
 
 </head>
