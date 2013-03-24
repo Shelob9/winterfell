@@ -94,6 +94,7 @@
 				'before_title' => '<h5>',
 				'after_title' => '</h5>',
 			) );
+		}
 	add_action( 'widgets_init', 'foundation_widgets' );
 
 /**
