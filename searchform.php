@@ -17,7 +17,7 @@
 					<input type="text" name="s" id="s" placeholder="<?php esc_attr_e( 'Search', 'foundation' ); ?>" />
 				</div>
 				<div class="four mobile-one columns">
-					<input type="submit" class="postfix button expand" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'foundation' ); ?>" />
+					<input type="submit" class="postfix button expand" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'GO', 'foundation' ); ?>" />
 				</div>
 			</div>
 		</div>
