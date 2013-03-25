@@ -33,7 +33,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="row" id="total-wrap">
+	<div class="row total-wrap">
 		<header class="row">
 
 			<hgroup class="site-title eight columns">
