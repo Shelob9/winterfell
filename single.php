@@ -26,4 +26,5 @@ get_header(); ?>
 <div class="three columns panel">
 	<?php get_sidebar(); ?>
 </div>
+</div>
 <?php get_footer(); ?>
