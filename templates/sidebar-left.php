@@ -5,6 +5,7 @@
  */
 
 get_header(); ?>
+</div>
 	<div class="row">
 		<div class="three columns panel">
 			<?php get_sidebar(); ?>
